@@ -6,6 +6,7 @@ export var rotation_speed = 20.0 # The speed of rotaion of the ball
 export var camera_path = NodePath("../camera") # The path to the camera
 var camera # The camera itself
 var camera_offset = Vector3(0, 3, 6) # The offset from the camera
+var rotation_y = 0
 
 func _ready():
 	# Get needed nodes
@@ -16,9 +17,9 @@ func _ready():
 
 func _process(delta):
 	# Transform the offset, so it is in "local" coords
-	var rotation = get_rotation()
-	var matrix = Matrix3(Vector3(0, 1, 0), rotation.y + PI/2)
-	var transformed_offset = matrix.xform(camera_offset)
+	var matrix = get_transform().inverse().basis
+	var transform_matrix = Matrix3(Vector3(0, 1, 0), rotation_y)
+	var transformed_offset = transform_matrix.xform(camera_offset)
 	# Place the camera in the right place
 	camera.set_translation(get_translation() + transformed_offset) # Todo, interpolate the camera...
 	# Rotate the camera, so it looks at the ball
@@ -28,20 +29,19 @@ func _process(delta):
 
 func _fixed_process(delta):
 	var force = Vector3(0, 0, 0) # The force
-	var angular_force = Vector3(0, 0, 0) # The rotation force
 	if(Input.is_action_pressed("forward")):
 		force += Vector3(0, 0, -speed) # Move forward
 	if(Input.is_action_pressed("back")):
 		force += Vector3(0, 0, speed) # Move backward
 	if(Input.is_action_pressed("rotate_right")):
-		angular_force += Vector3(0, -rotation_speed, 0) # Rotate right
+		force += Vector3(speed/2, 0, 0) # Move right
+		rotation_y += rotation_speed*delta
 	if(Input.is_action_pressed("rotate_left")):
-		angular_force += Vector3(0, rotation_speed, 0) # Rotate right
-	# Transform the force, so it is in "local" coords
-	var rotation = get_rotation()
-	var matrix = Matrix3(Vector3(0, 1, 0), rotation.y + PI/2)
-	force = matrix.xform(force)
+		force += Vector3(-speed/2, 0, 0) # Move right
+		rotation_y -= rotation_speed*delta
+	# Transform the force, so it is in "camera" coords
+	var transform_matrix = Matrix3(Vector3(0, 1, 0), rotation_y)
+	force = transform_matrix.xform(force)
 	# Apply the forces
-	set_linear_velocity(get_linear_velocity() + force)
-	set_angular_velocity(get_angular_velocity() + angular_force)
+	set_linear_velocity(get_linear_velocity() + force*delta)
 

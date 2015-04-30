@@ -146,11 +146,11 @@
 							<array  len="4" shared="false">
 								<dictionary  shared="false">
 									<string> "distance" </string>
-									<real> 25.364721 </real>
+									<real> 18.643829 </real>
 									<string> "x_rot" </string>
-									<real> 0.791701 </real>
+									<real> 0.554202 </real>
 									<string> "y_rot" </string>
-									<real> 13.875016 </real>
+									<real> 10.575038 </real>
 									<string> "listener" </string>
 									<bool> True </bool>
 									<string> "use_environment" </string>
@@ -235,7 +235,7 @@
 						<int> 0 </int>
 					</dictionary>
 					<string> "__editor_plugin_screen__" </string>
-					<string> "3D" </string>
+					<string> "Script" </string>
 				</dictionary>
 				<bool> False </bool>
 				<int> 1 </int>
@@ -253,16 +253,16 @@
 				<vector2> 0, 0 </vector2>
 				<transform> 1, 0, 0, 0, -0.294696, 0.955591, 0, -0.955591, -0.294696, 0, 22.4738, 0 </transform>
 				<color> 1, 1, 1, 1 </color>
-				<real> 0.05 </real>
+				<real> 0.07 </real>
 				<real> 0.7 </real>
 				<real> 60 </real>
 				<int> 3 </int>
 				<real> 0.5 </real>
 				<real> 2 </real>
-				<transform> 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.13115, 1.19259, -5.06643 </transform>
+				<transform> 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.13115, 2.4743, -5.06643 </transform>
 				<resource  resource_type="PackedScene" path="res://scenes/ball.xml">  </resource>
 				<node_path> "." </node_path>
-				<transform> -1, -0, -3.25841e-07, 0, 1, -0, 3.25841e-07, 0, -1, 0, 6.20408, 0 </transform>
+				<transform> 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.8963, 0 </transform>
 				<real> 0.3 </real>
 				<dictionary  shared="false">
 					<string> "__editor_plugin_states__" </string>
@@ -273,16 +273,16 @@
 							<bool> False </bool>
 							<string> "snap_rotation_step" </string>
 							<real> 0.261799 </real>
+							<string> "snap_relative" </string>
+							<bool> False </bool>
 							<string> "zoom" </string>
 							<real> 1 </real>
 							<string> "snap_step" </string>
 							<vector2> 10, 10 </vector2>
-							<string> "snap_relative" </string>
-							<bool> False </bool>
-							<string> "snap_grid" </string>
-							<bool> False </bool>
 							<string> "snap_rotation_offset" </string>
 							<real> 0 </real>
+							<string> "snap_grid" </string>
+							<bool> False </bool>
 							<string> "snap_show_grid" </string>
 							<bool> False </bool>
 							<string> "snap_offset" </string>
@@ -294,12 +294,6 @@
 						</dictionary>
 						<string> "3D" </string>
 						<dictionary  shared="false">
-							<string> "deflight_rot_y" </string>
-							<real> 0.628319 </real>
-							<string> "zfar" </string>
-							<real> 500 </real>
-							<string> "fov" </string>
-							<real> 45 </real>
 							<string> "viewports" </string>
 							<array  len="4" shared="false">
 								<dictionary  shared="false">
@@ -367,22 +361,28 @@
 									<vector3> 0, 0, 0 </vector3>
 								</dictionary>
 							</array>
-							<string> "viewport_mode" </string>
-							<int> 1 </int>
+							<string> "zfar" </string>
+							<real> 500 </real>
+							<string> "deflight_rot_y" </string>
+							<real> 0.628319 </real>
+							<string> "fov" </string>
+							<real> 45 </real>
 							<string> "default_light" </string>
 							<bool> True </bool>
+							<string> "viewport_mode" </string>
+							<int> 1 </int>
 							<string> "ambient_light_color" </string>
 							<color> 0.15, 0.15, 0.15, 1 </color>
 							<string> "show_grid" </string>
 							<bool> True </bool>
-							<string> "show_origin" </string>
-							<bool> True </bool>
 							<string> "znear" </string>
 							<real> 0.1 </real>
-							<string> "default_srgb" </string>
-							<bool> False </bool>
+							<string> "show_origin" </string>
+							<bool> True </bool>
 							<string> "deflight_rot_x" </string>
 							<real> 0.942478 </real>
+							<string> "default_srgb" </string>
+							<bool> False </bool>
 						</dictionary>
 					</dictionary>
 					<string> "__editor_run_settings__" </string>
@@ -396,7 +396,7 @@
 					<string> "3D" </string>
 				</dictionary>
 				<node_path> "../Camera" </node_path>
-				<transform> 1, 0, 0, 0, 0.715798, 0.698307, 0, -0.698307, 0.715798, 0, 4.5931, 8.17328 </transform>
+				<transform> 1, 0, 0, 0, 0.93417, 0.356828, 0, -0.356828, 0.93417, 0, 4.5931, 8.17328 </transform>
 				<real> 0.1 </real>
 				<real> 100 </real>
 				<int> 1048575 </int>
