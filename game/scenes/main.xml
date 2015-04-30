@@ -1,14 +1,101 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<resource_file type="PackedScene" subresource_count="3" version="1.1" version_name="Godot Engine v1.1.beta1.custom_build">
+<resource_file type="PackedScene" subresource_count="6" version="1.1" version_name="Godot Engine v1.1.beta1.custom_build">
 	<ext_resource path="res://scenes/ball.xml" type="PackedScene"></ext_resource>
 	<resource type="BoxShape" path="local://1">
 		<vector3 name="extents"> 20, 0.5, 20 </vector3>
 
 	</resource>
+	<resource type="BoxShape" path="local://2">
+		<vector3 name="extents"> 1, 1, 1 </vector3>
+
+	</resource>
+	<resource type="FixedMaterial" path="local://3">
+		<bool name="flags/visible"> True </bool>
+		<bool name="flags/double_sided"> False </bool>
+		<bool name="flags/invert_faces"> False </bool>
+		<bool name="flags/unshaded"> False </bool>
+		<bool name="flags/on_top"> False </bool>
+		<bool name="flags/lightmap_on_uv2"> True </bool>
+		<bool name="flags/colarray_is_srgb"> True </bool>
+		<int name="params/blend_mode"> 0 </int>
+		<int name="params/depth_draw"> 1 </int>
+		<real name="params/line_width"> 0 </real>
+		<bool name="fixed_flags/use_alpha"> False </bool>
+		<bool name="fixed_flags/use_color_array"> False </bool>
+		<bool name="fixed_flags/use_point_size"> False </bool>
+		<bool name="fixed_flags/discard_alpha"> False </bool>
+		<bool name="fixed_flags/use_xy_normalmap"> False </bool>
+		<color name="params/diffuse"> 1, 1, 1, 1 </color>
+		<color name="params/specular"> 0, 0, 0, 1 </color>
+		<color name="params/emission"> 0.251119, 0.251119, 0.251119, 1 </color>
+		<int name="params/specular_exp"> 40 </int>
+		<real name="params/detail_mix"> 1 </real>
+		<int name="params/normal_depth"> 1 </int>
+		<int name="params/shader"> 0 </int>
+		<real name="params/shader_param"> 0.5 </real>
+		<int name="params/glow"> 0 </int>
+		<real name="params/point_size"> 1 </real>
+		<transform name="uv_xform"> 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 </transform>
+		<resource name="textures/diffuse"></resource>		<int name="textures/diffuse_tc"> 0 </int>
+		<resource name="textures/detail"></resource>		<int name="textures/detail_tc"> 0 </int>
+		<resource name="textures/specular"></resource>		<int name="textures/specular_tc"> 0 </int>
+		<resource name="textures/emission"></resource>		<int name="textures/emission_tc"> 0 </int>
+		<resource name="textures/specular_exp"></resource>		<int name="textures/specular_exp_tc"> 0 </int>
+		<resource name="textures/glow"></resource>		<int name="textures/glow_tc"> 0 </int>
+		<resource name="textures/normal"></resource>		<int name="textures/normal_tc"> 0 </int>
+		<resource name="textures/shade_param"></resource>		<int name="textures/shade_param_tc"> 0 </int>
+
+	</resource>
+	<resource type="Environment" path="local://4">
+		<bool name="ambient_light/enabled"> True </bool>
+		<color name="ambient_light/color"> 0, 0, 0, 1 </color>
+		<real name="ambient_light/energy"> 1 </real>
+		<bool name="fxaa/enabled"> True </bool>
+		<int name="background/mode"> 1 </int>
+		<color name="background/color"> 0, 0, 0, 1 </color>
+		<nil name="background/texture">  </nil>
+		<nil name="background/cubemap">  </nil>
+		<real name="background/energy"> 1 </real>
+		<real name="background/scale"> 1 </real>
+		<real name="background/glow"> 0 </real>
+		<nil name="background/canvas_max_layer">  </nil>
+		<bool name="glow/enabled"> True </bool>
+		<int name="glow/blur_passes"> 1 </int>
+		<int name="glow/blur_scale"> 1 </int>
+		<int name="glow/blur_strength"> 1 </int>
+		<nil name="glow/blur_blend_mode">  </nil>
+		<real name="glow/bloom"> 0 </real>
+		<real name="glow/bloom_treshold"> 0.5 </real>
+		<bool name="dof_blur/enabled"> False </bool>
+		<int name="dof_blur/blur_passes"> 1 </int>
+		<real name="dof_blur/begin"> 100 </real>
+		<real name="dof_blur/range"> 10 </real>
+		<bool name="hdr/enabled"> False </bool>
+		<real name="hdr/tonemapper"> 0 </real>
+		<real name="hdr/exposure"> 0.4 </real>
+		<real name="hdr/white"> 1 </real>
+		<real name="hdr/glow_treshold"> 0.95 </real>
+		<real name="hdr/glow_scale"> 0.2 </real>
+		<real name="hdr/min_luminance"> 0.4 </real>
+		<real name="hdr/max_luminance"> 8 </real>
+		<real name="hdr/exposure_adj_speed"> 0.5 </real>
+		<bool name="fog/enabled"> True </bool>
+		<real name="fog/begin"> 100 </real>
+		<color name="fog/begin_color"> 0.352555, 0.352555, 0.352555, 1 </color>
+		<color name="fog/end_color"> 0.493945, 0.493945, 0.493945, 1 </color>
+		<real name="fog/attenuation"> 1 </real>
+		<bool name="fog/bg"> True </bool>
+		<bool name="bcs/enabled"> False </bool>
+		<real name="bcs/brightness"> 1 </real>
+		<real name="bcs/contrast"> 1 </real>
+		<real name="bcs/saturation"> 1 </real>
+		<bool name="srgb/enabled"> False </bool>
+
+	</resource>
 	<main_resource>
 		<dictionary name="_bundled" shared="false">
 			<string> "names" </string>
-			<string_array  len="76">
+			<string_array  len="89">
 				<string> "main" </string>
 				<string> "Spatial" </string>
 				<string> "_import_path" </string>
@@ -69,10 +156,22 @@
 				<string> "shadow/max_distance" </string>
 				<string> "shadow/split_weight" </string>
 				<string> "shadow/zoffset_scale" </string>
+				<string> "StaticBody 2" </string>
+				<string> "RigidBody" </string>
+				<string> "mode" </string>
+				<string> "mass" </string>
+				<string> "custom_integrator" </string>
+				<string> "continuous_cd" </string>
+				<string> "contacts_reported" </string>
+				<string> "contact_monitor" </string>
+				<string> "sleeping" </string>
+				<string> "can_sleep" </string>
+				<string> "axis_lock" </string>
+				<string> "velocity/linear" </string>
+				<string> "velocity/angular" </string>
 				<string> "TestCube" </string>
 				<string> "player" </string>
 				<string> "ball" </string>
-				<string> "RigidBody" </string>
 				<string> "camera_path" </string>
 				<string> "Camera" </string>
 				<string> "projection" </string>
@@ -85,15 +184,16 @@
 				<string> "environment" </string>
 				<string> "h_offset" </string>
 				<string> "v_offset" </string>
+				<string> "WorldEnvironment" </string>
 			</string_array>
 			<string> "version" </string>
 			<int> 1 </int>
 			<string> "conn_count" </string>
 			<int> 0 </int>
 			<string> "node_count" </string>
-			<int> 10 </int>
+			<int> 13 </int>
 			<string> "variants" </string>
-			<array  len="35" shared="false">
+			<array  len="39" shared="false">
 				<node_path> "" </node_path>
 				<transform> 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 </transform>
 				<bool> True </bool>
@@ -146,11 +246,11 @@
 							<array  len="4" shared="false">
 								<dictionary  shared="false">
 									<string> "distance" </string>
-									<real> 18.643829 </real>
+									<real> 29.585411 </real>
 									<string> "x_rot" </string>
-									<real> 0.554202 </real>
+									<real> 0.829205 </real>
 									<string> "y_rot" </string>
-									<real> 10.575038 </real>
+									<real> 15.200026 </real>
 									<string> "listener" </string>
 									<bool> True </bool>
 									<string> "use_environment" </string>
@@ -235,7 +335,7 @@
 						<int> 0 </int>
 					</dictionary>
 					<string> "__editor_plugin_screen__" </string>
-					<string> "Script" </string>
+					<string> "3D" </string>
 				</dictionary>
 				<bool> False </bool>
 				<int> 1 </int>
@@ -251,15 +351,18 @@
 				<resource name=""></resource>				<int> 0 </int>
 				<vector2> 40, 40 </vector2>
 				<vector2> 0, 0 </vector2>
-				<transform> 1, 0, 0, 0, -0.294696, 0.955591, 0, -0.955591, -0.294696, 0, 22.4738, 0 </transform>
+				<transform> 1, 0, 0, 0, -0.212101, 0.977248, 0, -0.977248, -0.212101, 0, 22.4738, 0 </transform>
 				<color> 1, 1, 1, 1 </color>
-				<real> 0.07 </real>
+				<real> 0.05 </real>
 				<real> 0.7 </real>
 				<real> 60 </real>
 				<int> 3 </int>
 				<real> 0.5 </real>
 				<real> 2 </real>
-				<transform> 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.13115, 2.4743, -5.06643 </transform>
+				<transform> 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.98183, 2.39292, -2.8596 </transform>
+				<resource  resource_type="Shape" path="local://2">  </resource>
+				<real> 1.5 </real>
+				<resource  resource_type="Material" path="local://3">  </resource>
 				<resource  resource_type="PackedScene" path="res://scenes/ball.xml">  </resource>
 				<node_path> "." </node_path>
 				<transform> 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.8963, 0 </transform>
@@ -273,12 +376,12 @@
 							<bool> False </bool>
 							<string> "snap_rotation_step" </string>
 							<real> 0.261799 </real>
-							<string> "snap_relative" </string>
-							<bool> False </bool>
 							<string> "zoom" </string>
 							<real> 1 </real>
 							<string> "snap_step" </string>
 							<vector2> 10, 10 </vector2>
+							<string> "snap_relative" </string>
+							<bool> False </bool>
 							<string> "snap_rotation_offset" </string>
 							<real> 0 </real>
 							<string> "snap_grid" </string>
@@ -294,6 +397,12 @@
 						</dictionary>
 						<string> "3D" </string>
 						<dictionary  shared="false">
+							<string> "deflight_rot_y" </string>
+							<real> 0.628319 </real>
+							<string> "zfar" </string>
+							<real> 500 </real>
+							<string> "fov" </string>
+							<real> 45 </real>
 							<string> "viewports" </string>
 							<array  len="4" shared="false">
 								<dictionary  shared="false">
@@ -361,12 +470,6 @@
 									<vector3> 0, 0, 0 </vector3>
 								</dictionary>
 							</array>
-							<string> "zfar" </string>
-							<real> 500 </real>
-							<string> "deflight_rot_y" </string>
-							<real> 0.628319 </real>
-							<string> "fov" </string>
-							<real> 45 </real>
 							<string> "default_light" </string>
 							<bool> True </bool>
 							<string> "viewport_mode" </string>
@@ -400,9 +503,10 @@
 				<real> 0.1 </real>
 				<real> 100 </real>
 				<int> 1048575 </int>
+				<resource  resource_type="Environment" path="local://4">  </resource>
 			</array>
 			<string> "nodes" </string>
-			<int_array  len="296"> 				-1, -1, 1, 0, -1, 4, 2, 0, 3, 1, 4, 2, 5, 3, 0, 0, 0, 1, 6, -1, 3, 2, 0, 3, 1, 4, 2, 0, 1, 0, 7, 7, -1, 15, 2, 0, 3, 1, 4, 2, 8, 2, 9, 4, 10, 5, 11, 6, 12, 7, 13, 4, 14, 5, 15, 8, 16, 9, 17, 10, 18, 10, 5, 11, 0, 2, 0, 19, 19, -1, 21, 2, 0, 3, 1, 4, 2, 14, 5, 20, 2, 21, 12, 22, 2, 23, 2, 24, 9, 25, 9, 26, 9, 27, 4, 28, 4, 29, 4, 30, 4, 31, 4, 32, 13, 33, 5, 34, 14, 35, 15, 36, 2, 0, 2, 0, 37, 37, -1, 6, 2, 0, 3, 1, 38, 7, 4, 2, 39, 6, 40, 4, 0, 1, 0, 41, 41, -1, 23, 2, 0, 3, 1, 38, 16, 4, 2, 14, 5, 42, 2, 43, 4, 44, 13, 45, 8, 46, 17, 47, 17, 48, 2, 49, 9, 50, 18, 51, 19, 52, 20, 53, 8, 54, 12, 55, 13, 56, 21, 57, 9, 58, 22, 59, 23, 0, 1, 0, 60, 60, -1, 18, 2, 0, 3, 1, 38, 24, 4, 2, 14, 5, 20, 2, 21, 12, 22, 2, 23, 2, 24, 9, 25, 9, 26, 9, 27, 4, 28, 4, 29, 4, 30, 4, 31, 4, 32, 13, 0, 0, 0, 1, 61, -1, 3, 2, 0, 3, 1, 4, 2, 0, 7, 0, 63, 62, 25, 6, 2, 26, 3, 1, 38, 27, 16, 28, 5, 29, 64, 30, 0, 7, 0, 65, 65, -1, 14, 2, 0, 3, 1, 38, 31, 4, 2, 66, 13, 67, 20, 68, 32, 69, 33, 70, 5, 71, 4, 72, 34, 73, 12, 74, 9, 75, 9, 0 </int_array>
+			<int_array  len="381"> 				-1, -1, 1, 0, -1, 4, 2, 0, 3, 1, 4, 2, 5, 3, 0, 0, 0, 1, 6, -1, 3, 2, 0, 3, 1, 4, 2, 0, 1, 0, 7, 7, -1, 15, 2, 0, 3, 1, 4, 2, 8, 2, 9, 4, 10, 5, 11, 6, 12, 7, 13, 4, 14, 5, 15, 8, 16, 9, 17, 10, 18, 10, 5, 11, 0, 2, 0, 19, 19, -1, 21, 2, 0, 3, 1, 4, 2, 14, 5, 20, 2, 21, 12, 22, 2, 23, 2, 24, 9, 25, 9, 26, 9, 27, 4, 28, 4, 29, 4, 30, 4, 31, 4, 32, 13, 33, 5, 34, 14, 35, 15, 36, 2, 0, 2, 0, 37, 37, -1, 6, 2, 0, 3, 1, 38, 7, 4, 2, 39, 6, 40, 4, 0, 1, 0, 41, 41, -1, 23, 2, 0, 3, 1, 38, 16, 4, 2, 14, 5, 42, 2, 43, 4, 44, 13, 45, 8, 46, 17, 47, 17, 48, 2, 49, 9, 50, 18, 51, 19, 52, 20, 53, 8, 54, 12, 55, 13, 56, 21, 57, 9, 58, 22, 59, 23, 0, 1, 0, 61, 60, -1, 24, 2, 0, 3, 1, 38, 24, 4, 2, 8, 2, 9, 4, 10, 5, 11, 25, 12, 1, 13, 4, 14, 5, 62, 13, 63, 26, 15, 22, 16, 9, 64, 4, 65, 4, 66, 13, 67, 4, 68, 4, 69, 2, 70, 13, 71, 10, 72, 10, 0, 6, 0, 73, 73, -1, 17, 2, 0, 3, 1, 4, 2, 14, 5, 20, 2, 21, 27, 22, 2, 23, 2, 24, 9, 25, 9, 26, 9, 27, 4, 28, 4, 29, 4, 30, 4, 31, 4, 32, 13, 0, 6, 0, 37, 37, -1, 5, 2, 0, 3, 1, 4, 2, 39, 25, 40, 4, 0, 0, 0, 1, 74, -1, 3, 2, 0, 3, 1, 4, 2, 0, 9, 0, 61, 75, 28, 6, 2, 29, 3, 1, 38, 30, 16, 31, 5, 32, 76, 33, 0, 9, 0, 77, 77, -1, 14, 2, 0, 3, 1, 38, 34, 4, 2, 78, 13, 79, 20, 80, 35, 81, 36, 82, 5, 83, 4, 84, 37, 85, 12, 86, 9, 87, 9, 0, 0, 0, 88, 88, -1, 4, 2, 0, 3, 1, 4, 2, 85, 38, 0 </int_array>
 			<string> "conns" </string>
 			<int_array  len="0"> 				 </int_array>
 		</dictionary>
