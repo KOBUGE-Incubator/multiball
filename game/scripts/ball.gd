@@ -5,7 +5,7 @@ export var speed = 20.0 # The speed of the ball
 export var rotation_speed = 20.0 # The speed of rotaion of the ball
 export var camera_path = NodePath("../camera") # The path to the camera
 var camera # The camera itself
-var default_camera_offset = Vector3(0, 3, 6) # The default offset from the camera
+var default_camera_offset = Vector3(0, 4, 7) # The default offset from the camera
 var camera_offset = default_camera_offset # The offset from the camera
 var target_camera_offset = camera_offset # An offset towards which we will move the camera
 var target_camera_pos = camera_offset #  A point towards which we will move the camera
@@ -52,7 +52,7 @@ func _process(delta):
 	var transformed_offset = transform_matrix.xform(camera_offset)
 	# Place the camera in the right place
 	var new_target_camera_pos = get_translation() + transformed_offset
-	target_camera_pos = (target_camera_pos + new_target_camera_pos)/2
+	target_camera_pos = target_camera_pos.linear_interpolate(new_target_camera_pos, delta*6)
 	camera.set_translation(target_camera_pos) # Todo, interpolate the camera...
 	# Rotate the camera, so it looks at the ball
 	var current_transform = camera.get_transform()
@@ -82,6 +82,7 @@ func _fixed_process(delta):
 	force = transform_matrix.xform(force)
 	# Apply the forces
 	set_linear_velocity(get_linear_velocity() + force.normalized()*speed*delta)
+	target_camera_offset += force/2
 	
 	# Check if we can see the ball, and if not, move the camera
 	var camera_pos = get_translation() + transform_matrix.xform(target_camera_offset)
@@ -100,5 +101,6 @@ func _fixed_process(delta):
 		var default_intersection = phisics_space.intersect_ray(get_translation() + transform_matrix.xform(default_camera_offset), get_translation(), [self])
 		if(! default_intersection.has("position")): # We will see it if we go back to defaults
 			target_camera_offset = default_camera_offset
+			
 		
 

@@ -362,7 +362,7 @@
 							<array  len="4" shared="false">
 								<dictionary  shared="false">
 									<string> "distance" </string>
-									<real> 5.441958 </real>
+									<real> 8.635703 </real>
 									<string> "listener" </string>
 									<bool> True </bool>
 									<string> "pos" </string>
@@ -372,9 +372,9 @@
 									<string> "use_orthogonal" </string>
 									<bool> False </bool>
 									<string> "x_rot" </string>
-									<real> 1.345797 </real>
+									<real> 0.158296 </real>
 									<string> "y_rot" </string>
-									<real> -18.037481 </real>
+									<real> -17.299965 </real>
 								</dictionary>
 								<dictionary  shared="false">
 									<string> "distance" </string>
