@@ -36,18 +36,18 @@ func _process(delta):
 func _fixed_process(delta):
 	var force = Vector3(0, 0, 0) # The force
 	if(Input.is_action_pressed("forward")):
-		force += Vector3(0, 0, -speed) # Move forward
+		force += Vector3(0, 0, -1) # Move forward
 	if(Input.is_action_pressed("back")):
-		force += Vector3(0, 0, speed) # Move backward
+		force += Vector3(0, 0, 1) # Move backward
 	if(Input.is_action_pressed("rotate_right")):
-		force += Vector3(speed/2, 0, 0) # Move right
+		force += Vector3(1/2, 0, 0) # Move right
 		rotation_y_speed += rotation_speed*delta
 	if(Input.is_action_pressed("rotate_left")):
-		force += Vector3(-speed/2, 0, 0) # Move right
+		force += Vector3(-1/2, 0, 0) # Move right
 		rotation_y_speed -= rotation_speed*delta
 	# Transform the force, so it is in "camera" coords
 	var transform_matrix = Matrix3(Vector3(0, 1, 0), rotation_y)
 	force = transform_matrix.xform(force)
 	# Apply the forces
-	set_linear_velocity(get_linear_velocity() + force*delta)
+	set_linear_velocity(get_linear_velocity() + force.normalized()*speed*delta)
 
