@@ -1,147 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<resource_file type="PackedScene" subresource_count="13" version="1.1" version_name="Godot Engine v1.1.beta1.custom_build">
-	<ext_resource path="res://images/air_particle.png" type="Texture"></ext_resource>
-	<ext_resource path="res://scenes/gridmap_tiles.xml" type="MeshLibrary"></ext_resource>
+<resource_file type="PackedScene" subresource_count="4" version="1.1" version_name="Godot Engine v1.1.beta1.custom_build">
+	<ext_resource path="res://meshes/gridmap_tiles.xml" type="MeshLibrary"></ext_resource>
 	<ext_resource path="res://scenes/ball.xml" type="PackedScene"></ext_resource>
-	<resource type="BoxShape" path="local://1">
-		<vector3 name="extents"> 20, 0.5, 20 </vector3>
-
-	</resource>
-	<resource type="FixedMaterial" path="local://2">
-		<bool name="flags/visible"> True </bool>
-		<bool name="flags/double_sided"> True </bool>
-		<bool name="flags/invert_faces"> False </bool>
-		<bool name="flags/unshaded"> False </bool>
-		<bool name="flags/on_top"> False </bool>
-		<bool name="flags/lightmap_on_uv2"> True </bool>
-		<bool name="flags/colarray_is_srgb"> True </bool>
-		<int name="params/blend_mode"> 0 </int>
-		<int name="params/depth_draw"> 1 </int>
-		<real name="params/line_width"> 0 </real>
-		<bool name="fixed_flags/use_alpha"> False </bool>
-		<bool name="fixed_flags/use_color_array"> False </bool>
-		<bool name="fixed_flags/use_point_size"> False </bool>
-		<bool name="fixed_flags/discard_alpha"> False </bool>
-		<bool name="fixed_flags/use_xy_normalmap"> False </bool>
-		<color name="params/diffuse"> 1, 1, 1, 1 </color>
-		<color name="params/specular"> 0, 0, 0, 1 </color>
-		<color name="params/emission"> 0, 0, 0, 1 </color>
-		<int name="params/specular_exp"> 40 </int>
-		<real name="params/detail_mix"> 1 </real>
-		<int name="params/normal_depth"> 1 </int>
-		<int name="params/shader"> 0 </int>
-		<real name="params/shader_param"> 0.5 </real>
-		<int name="params/glow"> 0 </int>
-		<real name="params/point_size"> 1 </real>
-		<transform name="uv_xform"> 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 </transform>
-		<resource name="textures/diffuse"></resource>		<int name="textures/diffuse_tc"> 0 </int>
-		<resource name="textures/detail"></resource>		<int name="textures/detail_tc"> 0 </int>
-		<resource name="textures/specular"></resource>		<int name="textures/specular_tc"> 0 </int>
-		<resource name="textures/emission"></resource>		<int name="textures/emission_tc"> 0 </int>
-		<resource name="textures/specular_exp"></resource>		<int name="textures/specular_exp_tc"> 0 </int>
-		<resource name="textures/glow"></resource>		<int name="textures/glow_tc"> 0 </int>
-		<resource name="textures/normal"></resource>		<int name="textures/normal_tc"> 0 </int>
-		<resource name="textures/shade_param"></resource>		<int name="textures/shade_param_tc"> 0 </int>
-
-	</resource>
-	<resource type="BoxShape" path="local://3">
-		<vector3 name="extents"> 2, 2, 2 </vector3>
-
-	</resource>
-	<resource type="FixedMaterial" path="local://4">
-		<bool name="flags/visible"> True </bool>
-		<bool name="flags/double_sided"> False </bool>
-		<bool name="flags/invert_faces"> False </bool>
-		<bool name="flags/unshaded"> False </bool>
-		<bool name="flags/on_top"> False </bool>
-		<bool name="flags/lightmap_on_uv2"> True </bool>
-		<bool name="flags/colarray_is_srgb"> True </bool>
-		<int name="params/blend_mode"> 0 </int>
-		<int name="params/depth_draw"> 1 </int>
-		<real name="params/line_width"> 0 </real>
-		<bool name="fixed_flags/use_alpha"> False </bool>
-		<bool name="fixed_flags/use_color_array"> False </bool>
-		<bool name="fixed_flags/use_point_size"> False </bool>
-		<bool name="fixed_flags/discard_alpha"> False </bool>
-		<bool name="fixed_flags/use_xy_normalmap"> False </bool>
-		<color name="params/diffuse"> 1, 1, 1, 1 </color>
-		<color name="params/specular"> 0, 0, 0, 1 </color>
-		<color name="params/emission"> 0.251119, 0.251119, 0.251119, 1 </color>
-		<int name="params/specular_exp"> 40 </int>
-		<real name="params/detail_mix"> 1 </real>
-		<int name="params/normal_depth"> 1 </int>
-		<int name="params/shader"> 0 </int>
-		<real name="params/shader_param"> 0.5 </real>
-		<int name="params/glow"> 0 </int>
-		<real name="params/point_size"> 1 </real>
-		<transform name="uv_xform"> 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 </transform>
-		<resource name="textures/diffuse"></resource>		<int name="textures/diffuse_tc"> 0 </int>
-		<resource name="textures/detail"></resource>		<int name="textures/detail_tc"> 0 </int>
-		<resource name="textures/specular"></resource>		<int name="textures/specular_tc"> 0 </int>
-		<resource name="textures/emission"></resource>		<int name="textures/emission_tc"> 0 </int>
-		<resource name="textures/specular_exp"></resource>		<int name="textures/specular_exp_tc"> 0 </int>
-		<resource name="textures/glow"></resource>		<int name="textures/glow_tc"> 0 </int>
-		<resource name="textures/normal"></resource>		<int name="textures/normal_tc"> 0 </int>
-		<resource name="textures/shade_param"></resource>		<int name="textures/shade_param_tc"> 0 </int>
-
-	</resource>
-	<resource type="BoxShape" path="local://5">
-		<vector3 name="extents"> 10, 0.5, 10 </vector3>
-
-	</resource>
-	<resource type="BoxShape" path="local://6">
-		<vector3 name="extents"> 20, 6, 20 </vector3>
-
-	</resource>
-	<resource type="BoxShape" path="local://7">
-		<vector3 name="extents"> 4.87874, 11.1765, 3.33175 </vector3>
-
-	</resource>
-	<resource type="FixedMaterial" path="local://8">
-		<bool name="flags/visible"> True </bool>
-		<bool name="flags/double_sided"> False </bool>
-		<bool name="flags/invert_faces"> False </bool>
-		<bool name="flags/unshaded"> True </bool>
-		<bool name="flags/on_top"> False </bool>
-		<bool name="flags/lightmap_on_uv2"> True </bool>
-		<bool name="flags/colarray_is_srgb"> True </bool>
-		<int name="params/blend_mode"> 0 </int>
-		<int name="params/depth_draw"> 1 </int>
-		<real name="params/line_width"> 0 </real>
-		<bool name="fixed_flags/use_alpha"> True </bool>
-		<bool name="fixed_flags/use_color_array"> True </bool>
-		<bool name="fixed_flags/use_point_size"> False </bool>
-		<bool name="fixed_flags/discard_alpha"> False </bool>
-		<bool name="fixed_flags/use_xy_normalmap"> False </bool>
-		<color name="params/diffuse"> 1, 1, 1, 1 </color>
-		<color name="params/specular"> 0, 0, 0, 1 </color>
-		<color name="params/emission"> 0, 0, 0, 1 </color>
-		<int name="params/specular_exp"> 40 </int>
-		<real name="params/detail_mix"> 1 </real>
-		<int name="params/normal_depth"> 1 </int>
-		<int name="params/shader"> 0 </int>
-		<real name="params/shader_param"> 0.5 </real>
-		<int name="params/glow"> 0 </int>
-		<real name="params/point_size"> 1 </real>
-		<transform name="uv_xform"> 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 </transform>
-		<resource name="textures/diffuse" resource_type="Texture" path="res://images/air_particle.png">  </resource>
-		<int name="textures/diffuse_tc"> 0 </int>
-		<resource name="textures/detail"></resource>		<int name="textures/detail_tc"> 0 </int>
-		<resource name="textures/specular"></resource>		<int name="textures/specular_tc"> 0 </int>
-		<resource name="textures/emission"></resource>		<int name="textures/emission_tc"> 0 </int>
-		<resource name="textures/specular_exp"></resource>		<int name="textures/specular_exp_tc"> 0 </int>
-		<resource name="textures/glow"></resource>		<int name="textures/glow_tc"> 0 </int>
-		<resource name="textures/normal"></resource>		<int name="textures/normal_tc"> 0 </int>
-		<resource name="textures/shade_param"></resource>		<int name="textures/shade_param_tc"> 0 </int>
-
-	</resource>
-	<resource type="Environment" path="local://9">
+	<resource type="Environment" path="local://1">
 		<bool name="ambient_light/enabled"> True </bool>
 		<color name="ambient_light/color"> 0.227943, 0.227943, 0.227943, 1 </color>
 		<real name="ambient_light/energy"> 1 </real>
 		<bool name="fxaa/enabled"> True </bool>
-		<int name="background/mode"> 1 </int>
-		<color name="background/color"> 0, 0, 0, 1 </color>
+		<int name="background/mode"> 2 </int>
+		<color name="background/color"> 0.387178, 0.784931, 0.785595, 1 </color>
 		<nil name="background/texture">  </nil>
 		<nil name="background/cubemap">  </nil>
 		<real name="background/energy"> 1 </real>
@@ -184,7 +51,7 @@
 	<main_resource>
 		<dictionary name="_bundled" shared="false">
 			<string> "names" </string>
-			<string_array  len="165">
+			<string_array  len="57">
 				<string> "main" </string>
 				<string> "Spatial" </string>
 				<string> "_import_path" </string>
@@ -192,41 +59,9 @@
 				<string> "visibility/visible" </string>
 				<string> "__meta__" </string>
 				<string> "level" </string>
-				<string> "StaticBody" </string>
-				<string> "input/ray_pickable" </string>
-				<string> "input/capture_on_drag" </string>
-				<string> "shape_count" </string>
-				<string> "shapes/0/shape" </string>
-				<string> "shapes/0/transform" </string>
-				<string> "shapes/0/trigger" </string>
-				<string> "layers" </string>
-				<string> "friction" </string>
-				<string> "bounce" </string>
-				<string> "constant_linear_velocity" </string>
-				<string> "constant_angular_velocity" </string>
-				<string> "Quad" </string>
-				<string> "geometry/visible" </string>
-				<string> "geometry/material_override" </string>
-				<string> "geometry/cast_shadow" </string>
-				<string> "geometry/receive_shadows" </string>
-				<string> "geometry/range_begin" </string>
-				<string> "geometry/range_end" </string>
-				<string> "geometry/extra_cull_margin" </string>
-				<string> "geometry/billboard" </string>
-				<string> "geometry/billboard_y" </string>
-				<string> "geometry/depth_scale" </string>
-				<string> "geometry/visible_in_all_rooms" </string>
-				<string> "geometry/use_baked_light" </string>
-				<string> "geometry/baked_light_tex_id" </string>
-				<string> "quad/axis" </string>
-				<string> "quad/size" </string>
-				<string> "quad/offset" </string>
-				<string> "quad/centered" </string>
-				<string> "CollisionShape" </string>
-				<string> "transform/local" </string>
-				<string> "shape" </string>
-				<string> "trigger" </string>
 				<string> "DirectionalLight" </string>
+				<string> "transform/local" </string>
+				<string> "layers" </string>
 				<string> "params/enabled" </string>
 				<string> "params/editor_only" </string>
 				<string> "params/bake_mode" </string>
@@ -245,85 +80,8 @@
 				<string> "shadow/max_distance" </string>
 				<string> "shadow/split_weight" </string>
 				<string> "shadow/zoffset_scale" </string>
-				<string> "StaticBody 2" </string>
-				<string> "RigidBody" </string>
-				<string> "mode" </string>
-				<string> "mass" </string>
-				<string> "custom_integrator" </string>
-				<string> "continuous_cd" </string>
-				<string> "contacts_reported" </string>
-				<string> "contact_monitor" </string>
-				<string> "sleeping" </string>
-				<string> "can_sleep" </string>
-				<string> "axis_lock" </string>
-				<string> "velocity/linear" </string>
-				<string> "velocity/angular" </string>
-				<string> "TestCube" </string>
-				<string> "StaticBody1" </string>
-				<string> "Area" </string>
-				<string> "shapes/1/shape" </string>
-				<string> "shapes/1/transform" </string>
-				<string> "shapes/1/trigger" </string>
-				<string> "space_override" </string>
-				<string> "gravity_point" </string>
-				<string> "gravity_vec" </string>
-				<string> "gravity" </string>
-				<string> "density" </string>
-				<string> "priority" </string>
-				<string> "monitoring" </string>
-				<string> "Particles" </string>
-				<string> "material" </string>
-				<string> "amount" </string>
-				<string> "emitting" </string>
-				<string> "visibility" </string>
-				<string> "emission_extents" </string>
-				<string> "emission_base_velocity" </string>
-				<string> "emission_points" </string>
-				<string> "gravity_normal" </string>
-				<string> "local_coords" </string>
-				<string> "emit_timeout" </string>
-				<string> "vars/lifetime" </string>
-				<string> "vars/spread" </string>
-				<string> "vars/gravity" </string>
-				<string> "vars/linear_vel" </string>
-				<string> "vars/angular_vel" </string>
-				<string> "vars/linear_accel" </string>
-				<string> "vars/radial_accel" </string>
-				<string> "vars/tan_accel" </string>
-				<string> "vars/damping" </string>
-				<string> "vars/initial_size" </string>
-				<string> "vars/final_size" </string>
-				<string> "vars/initial_angle" </string>
-				<string> "vars/height_from_velocity" </string>
-				<string> "vars/height" </string>
-				<string> "vars/height_speed_scale" </string>
-				<string> "rand/lifetime" </string>
-				<string> "rand/spread" </string>
-				<string> "rand/gravity" </string>
-				<string> "rand/linear_vel" </string>
-				<string> "rand/angular_vel" </string>
-				<string> "rand/linear_accel" </string>
-				<string> "rand/radial_accel" </string>
-				<string> "rand/tan_accel" </string>
-				<string> "rand/damping" </string>
-				<string> "rand/initial_size" </string>
-				<string> "rand/final_size" </string>
-				<string> "rand/initial_angle" </string>
-				<string> "rand/height" </string>
-				<string> "rand/height_speed_scale" </string>
-				<string> "color_phases/count" </string>
-				<string> "phase_0/pos" </string>
-				<string> "phase_0/color" </string>
-				<string> "phase_1/pos" </string>
-				<string> "phase_1/color" </string>
-				<string> "phase_2/pos" </string>
-				<string> "phase_2/color" </string>
-				<string> "phase_3/pos" </string>
-				<string> "phase_3/color" </string>
-				<string> "CollisionShape 2" </string>
-				<string> "StaticBody2" </string>
-				<string> "StaticBody3" </string>
 				<string> "DirectionalLight1" </string>
+				<string> "DirectionalLight2" </string>
 				<string> "GridMap" </string>
 				<string> "theme/theme" </string>
 				<string> "theme/bake" </string>
@@ -337,6 +95,7 @@
 				<string> "data" </string>
 				<string> "player" </string>
 				<string> "ball" </string>
+				<string> "RigidBody" </string>
 				<string> "camera_path" </string>
 				<string> "Camera" </string>
 				<string> "projection" </string>
@@ -356,9 +115,9 @@
 			<string> "conn_count" </string>
 			<int> 0 </int>
 			<string> "node_count" </string>
-			<int> 29 </int>
+			<int> 10 </int>
 			<string> "variants" </string>
-			<array  len="76" shared="false">
+			<array  len="34" shared="false">
 				<node_path> "" </node_path>
 				<transform> 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 </transform>
 				<bool> True </bool>
@@ -411,11 +170,11 @@
 							<array  len="4" shared="false">
 								<dictionary  shared="false">
 									<string> "distance" </string>
-									<real> 160.842285 </real>
+									<real> 118.2239 </real>
 									<string> "x_rot" </string>
-									<real> 0.291705 </real>
+									<real> 0.879203 </real>
 									<string> "y_rot" </string>
-									<real> -0.537408 </real>
+									<real> 24.412575 </real>
 									<string> "listener" </string>
 									<bool> True </bool>
 									<string> "use_environment" </string>
@@ -423,7 +182,7 @@
 									<string> "use_orthogonal" </string>
 									<bool> False </bool>
 									<string> "pos" </string>
-									<vector3> 0, 0, 0 </vector3>
+									<vector3> -16.2703, 3.63758, 71.9818 </vector3>
 								</dictionary>
 								<dictionary  shared="false">
 									<string> "distance" </string>
@@ -502,90 +261,32 @@
 					<string> "__editor_plugin_screen__" </string>
 					<string> "3D" </string>
 				</dictionary>
-				<bool> False </bool>
+				<transform> 0.987288, 0.0922199, 0.129453, -0.123426, -0.068324, 0.989999, 0.100142, -0.993392, -0.0560731, 0, 64.8552, 0 </transform>
 				<int> 1 </int>
-				<resource  resource_type="Shape" path="local://1">  </resource>
-				<transform> 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0 </transform>
-				<real> 1 </real>
-				<real> 0 </real>
-				<vector3> 0, 0, 0 </vector3>
-				<dictionary  shared="false">
-					<string> "_editor_collapsed" </string>
-					<bool> True </bool>
-				</dictionary>
-				<resource  resource_type="Material" path="local://2">  </resource>
+				<bool> False </bool>
 				<int> 0 </int>
-				<vector2> 40, 40 </vector2>
-				<vector2> 0, 0 </vector2>
-				<transform> 1, 0, 0, 0, 0.260578, 0.965453, 0, -0.965453, 0.260578, 0, 22.4738, 0 </transform>
-				<color> 1, 1, 1, 1 </color>
-				<real> 0.5 </real>
-				<real> 0.05 </real>
 				<real> 0.7 </real>
-				<real> 60 </real>
-				<resource name=""></resource>				<int> 3 </int>
+				<color> 1, 1, 1, 1 </color>
+				<real> 0 </real>
+				<real> 0.5 </real>
 				<real> 2 </real>
-				<transform> 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.235843, 2.39292, 16.7137 </transform>
-				<resource  resource_type="Shape" path="local://3">  </resource>
-				<dictionary  shared="false">
-					<string> "_editor_collapsed" </string>
-					<bool> True </bool>
-				</dictionary>
-				<transform> 2, 0, 0, -0, 2, 0, 0, -0, 2, 0, 0, 0 </transform>
-				<resource  resource_type="Material" path="local://4">  </resource>
-				<transform> 1, 0, 0, 0, 0.356985, -0.93411, 0, 0.93411, 0.356985, 0, 9.51457, -19.375 </transform>
-				<resource  resource_type="Shape" path="local://5">  </resource>
-				<dictionary  shared="false">
-					<string> "_editor_collapsed" </string>
-					<bool> True </bool>
-				</dictionary>
-				<transform> 1, 0, -3.72529e-09, 3.72529e-09, 1, -2.98023e-08, 3.72529e-09, -2.98023e-08, 1, 0, 0, 0 </transform>
-				<vector2> 20, 20 </vector2>
-				<transform> 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.87065, 40 </transform>
-				<int> 2 </int>
-				<resource  resource_type="Shape" path="local://6">  </resource>
-				<resource  resource_type="Shape" path="local://7">  </resource>
-				<transform> 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -16.9728, 0 </transform>
-				<vector3> 0, 1, 0 </vector3>
-				<real> 14 </real>
+				<real> 60 </real>
+				<real> 1 </real>
+				<resource name=""></resource>				<real> 0.3 </real>
+				<transform> 1, -0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 64.8552, 0 </transform>
 				<real> 0.1 </real>
-				<transform> 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -16.0098, 0 </transform>
-				<resource  resource_type="Material" path="local://8">  </resource>
-				<int> 16 </int>
-				<aabb> -4, 10, -4, 40, 20, 40 </aabb>
-				<vector3> 20, 0.1, 20 </vector3>
-				<vector3_array  len="0"> 					 </vector3_array>
+				<resource  resource_type="MeshLibrary" path="res://meshes/gridmap_tiles.xml">  </resource>
 				<real> 3 </real>
-				<real> 9.8 </real>
-				<color> 1, 1, 1, 0 </color>
-				<real> 0.2 </real>
-				<color> 1, 1, 1, 0.556745 </color>
-				<color> 0, 0, 0, 1 </color>
-				<transform> 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.18656, 78.8748 </transform>
-				<dictionary  shared="false">
-					<string> "_editor_collapsed" </string>
-					<bool> True </bool>
-				</dictionary>
-				<transform> 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.33063, -31.1796, 39.0768 </transform>
-				<dictionary  shared="false">
-					<string> "_editor_collapsed" </string>
-					<bool> True </bool>
-				</dictionary>
-				<transform> 2.1597, 0, 0, 0, 2.1597, 0, 0, 0, 2.1597, 0, -33.113, 40.3391 </transform>
-				<transform> 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 22.4738, 0 </transform>
-				<real> 0.3 </real>
-				<transform> 1.5, -0, 0, 0, 1.5, -0, 0, 0, 1.5, -12, 0, 0 </transform>
-				<resource  resource_type="MeshLibrary" path="res://scenes/gridmap_tiles.xml">  </resource>
 				<int> 4 </int>
 				<dictionary  shared="false">
 					<string> "cells" </string>
-					<int_array  len="102"> 						19, 0, 1441800, 19, 1, 1441800, 19, 2, 1441800, 19, 3, 1441800, 19, 4, 1441800, 19, 5, 1441800, 19, 6, 1441800, 19, 7, 1441800, 19, 8, 1441800, 19, 9, 1441800, 19, 10, 1441800, 19, 11, 1441800, 19, 12, 1441800, 19, 13, 1441800, 19, 14, 1441800, 19, 15, 1441800, 19, 16, 1441800, 18, 17, 655374, 19, 17, 655369, 65552, 17, 655374, 131086, 17, 655373, 10, 65532, 12, 11, 65532, 8, 12, 65532, 8, 13, 65532, 8, 14, 65532, 8, 15, 65532, 8, 16, 65532, 8, 17, 65532, 8, 18, 65532, 8, 19, 65532, 1441801, 19, 65533, 1441800, 19, 65534, 1441800, 19, 65535, 1441800 </int_array>
+					<int_array  len="2088"> 						0, 0, 0, 1, 0, 0, 2, 0, 1048580, 65533, 0, 1441796, 65534, 0, 0, 65535, 0, 0, -196608, 0, 1, -196607, 0, 1, -196606, 0, 1, -131075, 0, 1, -131074, 0, 1, -131073, 0, 1, -131070, 0, 11, -65539, 0, 655371, -65534, 0, 11, -3, 0, 655371, 0, 1, 0, 1, 1, 1048576, 2, 1, 1048580, 65533, 1, 1441796, 65534, 1, 0, 65535, 1, 0, -196608, 1, 1, -196607, 1, 1, -196606, 1, 1, -131075, 1, 1, -131074, 1, 1, -131073, 1, 1, -131070, 1, 11, -65539, 1, 655371, -65534, 1, 11, -3, 1, 655371, 0, 2, 655364, 1, 2, 655364, 2, 2, 655365, 65533, 2, 1048581, 65534, 2, 655364, 65535, 2, 1441798, -196608, 2, 1, -196607, 2, 1, -196606, 2, 1, -131075, 2, 1, -131074, 2, 1, -131073, 2, 1, -131072, 2, 1441803, -131071, 2, 1441803, -131070, 2, 13, -65539, 2, 1441805, -65538, 2, 1441803, -65537, 2, 1441803, -65536, 2, 1441803, -65535, 2, 1441803, -65534, 2, 13, -3, 2, 1441805, -2, 2, 1441803, 65535, 3, 1441796, -65536, 3, 131088, -2, 3, 262160, -1, 3, 1441801, 65535, 4, 1441796, 65535, 5, 1441796, 65535, 6, 1441796, -65536, 6, 917520, -2, 6, 524304, -1, 6, 1048585, 65535, 7, 1048580, -2686977, 7, 1441807, -2621441, 7, 1441807, -2555905, 7, 1441807, -2490369, 7, 1441807, -2424833, 7, 1441807, -2359297, 7, 1441807, -2293761, 7, 1441807, -2228225, 7, 1441807, -2162689, 7, 1441807, -2097153, 7, 1441807, -2031617, 7, 1441807, -1966081, 7, 1441807, -1900545, 7, 1441807, -1835009, 7, 1441807, -1769473, 7, 1441807, -1703937, 7, 1441807, -1638401, 7, 1441807, -1572865, 7, 1441807, -1507329, 7, 1441807, -1441793, 7, 1441807, -1376257, 7, 1441807, -1310721, 7, 1441807, -1245185, 7, 1441807, -1179649, 7, 1441807, -1114113, 7, 1441807, -1048577, 7, 1441807, -983041, 7, 1441807, -917505, 7, 1441807, -851969, 7, 1441807, -786433, 7, 1441807, -720897, 7, 1441807, -655361, 7, 1441807, -589825, 7, 1441807, -524289, 7, 1441807, -458753, 7, 1441807, -393217, 7, 1441807, -327681, 7, 1441807, -262145, 7, 1441807, -196609, 7, 1441807, -131073, 7, 1441807, -65537, 7, 1441807, -65536, 7, 655371, -2, 7, 11, 65535, 8, 1048580, -65536, 8, 131088, -2, 8, 262160, -1, 8, 1441801, 65535, 9, 1048580, 65535, 10, 1048580, 65535, 11, 1048580, 0, 12, 1048576, 1, 12, 1048576, 65533, 12, 1048576, 65534, 12, 1048576, 65535, 12, 1048580, 0, 13, 1048576, 1, 13, 1048576, 65533, 13, 1048576, 65534, 13, 1048576, 65535, 13, 1048580, 0, 14, 1048576, 1, 14, 1048576, 65533, 14, 1048576, 65534, 14, 1048576, 65535, 14, 1048580, 0, 15, 1441795, 1, 15, 1441795, 65533, 15, 1441795, 65534, 15, 1441795, 65535, 15, 1441802, 65536, 17, 1441795, 65537, 17, 1441795, 131069, 17, 1441795, 131070, 17, 1441795, 131071, 17, 1441802, 131072, 19, 1441795, 131073, 19, 1441795, 196605, 19, 1441795, 196606, 19, 1441795, 196607, 19, 1441802, 131072, 21, 1, 131073, 21, 1, 196605, 21, 1, 196606, 21, 1, 196608, 21, 655373, 196609, 21, 1048589, 262141, 21, 655373, 262142, 21, 1048589, 262143, 21, 1441802, 262144, 21, 655373, 262145, 21, 1048589, 327677, 21, 655373, 327678, 21, 1048589, 327680, 21, 655373, 327681, 21, 1048589, 393213, 21, 655373, 393214, 21, 1048589, 393216, 21, 655373, 393217, 21, 1048589, 458749, 21, 655373, 458750, 21, 1048589, 458752, 21, 655373, 458753, 21, 1048589, 524285, 21, 655373, 524286, 21, 1048589, 524288, 21, 655373, 524289, 21, 1048589, 589821, 21, 655373, 589822, 21, 1048589, 589824, 21, 0, 589825, 21, 0, 655357, 21, 0, 655358, 21, 0, 131072, 22, 1, 131073, 22, 1, 196605, 22, 1, 196606, 22, 1, 196607, 22, 1, 196608, 22, 655371, 196609, 22, 11, 262141, 22, 655371, 262142, 22, 11, 262144, 22, 655371, 262145, 22, 11, 327677, 22, 655371, 327678, 22, 11, 327680, 22, 655371, 327681, 22, 11, 393213, 22, 655371, 393214, 22, 11, 393216, 22, 655371, 393217, 22, 11, 458749, 22, 655371, 458750, 22, 11, 458752, 22, 655371, 458753, 22, 11, 524285, 22, 655371, 524286, 22, 11, 524288, 22, 655371, 524289, 22, 11, 589821, 22, 655371, 589822, 22, 11, 589824, 22, 0, 589825, 22, 0, 655357, 22, 0, 655358, 22, 0, 131072, 23, 1, 131073, 23, 1, 196605, 23, 1, 196606, 23, 1, 196607, 23, 1, 196608, 23, 655371, 196609, 23, 11, 262141, 23, 655371, 262142, 23, 11, 262144, 23, 655371, 262145, 23, 11, 327677, 23, 655371, 327678, 23, 11, 327679, 23, 1441802, 327680, 23, 655371, 327681, 23, 11, 393213, 23, 655371, 393214, 23, 11, 393216, 23, 655371, 393217, 23, 11, 458749, 23, 655371, 458750, 23, 11, 458752, 23, 655371, 458753, 23, 11, 524285, 23, 655371, 524286, 23, 11, 524288, 23, 655371, 524289, 23, 11, 589821, 23, 655371, 589822, 23, 11, 589824, 23, 0, 589825, 23, 0, 655357, 23, 0, 655358, 23, 0, 131072, 24, 1, 131073, 24, 1, 196605, 24, 1, 196606, 24, 1, 196607, 24, 1, 196608, 24, 655371, 196609, 24, 11, 262141, 24, 655371, 262142, 24, 11, 262144, 24, 655371, 262145, 24, 11, 327677, 24, 655371, 327678, 24, 11, 327680, 24, 655371, 327681, 24, 11, 393213, 24, 655371, 393214, 24, 11, 393216, 24, 655371, 393217, 24, 11, 458749, 24, 655371, 458750, 24, 11, 458752, 24, 655371, 458753, 24, 11, 524285, 24, 655371, 524286, 24, 11, 524288, 24, 655371, 524289, 24, 11, 589821, 24, 655371, 589822, 24, 11, 589824, 24, 0, 589825, 24, 0, 655357, 24, 0, 655358, 24, 0, 131072, 25, 1, 131073, 25, 1, 196605, 25, 1, 196606, 25, 1, 196607, 25, 1, 196608, 25, 655371, 196609, 25, 11, 262141, 25, 655371, 262142, 25, 11, 262144, 25, 655371, 262145, 25, 11, 327677, 25, 655371, 327678, 25, 11, 327680, 25, 655371, 327681, 25, 11, 393213, 25, 655371, 393214, 25, 11, 393215, 25, 1441802, 393216, 25, 655371, 393217, 25, 11, 458749, 25, 655371, 458750, 25, 11, 458752, 25, 655371, 458753, 25, 11, 524285, 25, 655371, 524286, 25, 11, 524288, 25, 655371, 524289, 25, 11, 589821, 25, 655371, 589822, 25, 11, 589824, 25, 0, 589825, 25, 0, 655357, 25, 0, 655358, 25, 0, 131072, 26, 1, 131073, 26, 1, 196605, 26, 1, 196606, 26, 1, 196607, 26, 1, 196608, 26, 655371, 196609, 26, 11, 262141, 26, 655371, 262142, 26, 11, 262144, 26, 655371, 262145, 26, 11, 327677, 26, 655371, 327678, 26, 11, 327680, 26, 655371, 327681, 26, 11, 393213, 26, 655371, 393214, 26, 11, 393216, 26, 655371, 393217, 26, 11, 458749, 26, 655371, 458750, 26, 11, 458752, 26, 655371, 458753, 26, 11, 524285, 26, 655371, 524286, 26, 11, 524288, 26, 655371, 524289, 26, 11, 589821, 26, 655371, 589822, 26, 11, 589824, 26, 0, 589825, 26, 0, 655357, 26, 0, 655358, 26, 0, 131072, 27, 1, 131073, 27, 1, 196605, 27, 1, 196606, 27, 1, 196607, 27, 1, 196608, 27, 655371, 196609, 27, 11, 262141, 27, 655371, 262142, 27, 11, 262144, 27, 655371, 262145, 27, 11, 327677, 27, 655371, 327678, 27, 11, 327680, 27, 655371, 327681, 27, 11, 393213, 27, 655371, 393214, 27, 11, 393216, 27, 655371, 393217, 27, 11, 458749, 27, 655371, 458750, 27, 11, 458751, 27, 1441802, 458752, 27, 655371, 458753, 27, 11, 524285, 27, 655371, 524286, 27, 11, 524288, 27, 655371, 524289, 27, 11, 589821, 27, 655371, 589822, 27, 11, 589824, 27, 0, 589825, 27, 0, 655357, 27, 0, 655358, 27, 0, 131072, 28, 1, 131073, 28, 1, 196605, 28, 1, 196606, 28, 1, 196607, 28, 1, 196608, 28, 655371, 196609, 28, 11, 262141, 28, 655371, 262142, 28, 11, 262144, 28, 655371, 262145, 28, 11, 327677, 28, 655371, 327678, 28, 11, 327680, 28, 655371, 327681, 28, 11, 393213, 28, 655371, 393214, 28, 11, 393216, 28, 655371, 393217, 28, 11, 458749, 28, 655371, 458750, 28, 11, 458752, 28, 655371, 458753, 28, 11, 524285, 28, 655371, 524286, 28, 11, 524288, 28, 655371, 524289, 28, 11, 589821, 28, 655371, 589822, 28, 11, 589824, 28, 0, 589825, 28, 0, 655357, 28, 0, 655358, 28, 0, 131072, 29, 1, 131073, 29, 1, 196605, 29, 1, 196606, 29, 1, 196607, 29, 1, 196608, 29, 655371, 196609, 29, 11, 262141, 29, 655371, 262142, 29, 11, 262144, 29, 655371, 262145, 29, 11, 327677, 29, 655371, 327678, 29, 11, 327680, 29, 655371, 327681, 29, 11, 393213, 29, 655371, 393214, 29, 11, 393216, 29, 655371, 393217, 29, 11, 458749, 29, 655371, 458750, 29, 11, 458752, 29, 655371, 458753, 29, 11, 524285, 29, 655371, 524286, 29, 11, 524287, 29, 1441802, 524288, 29, 655371, 524289, 29, 11, 589821, 29, 655371, 589822, 29, 11, 589824, 29, 1048576, 589825, 29, 1048576, 655357, 29, 1048576, 655358, 29, 1048576, 131072, 30, 1, 131073, 30, 1, 196605, 30, 1, 196606, 30, 1, 196607, 30, 1, 196608, 30, 655371, 196609, 30, 11, 262141, 30, 655371, 262142, 30, 11, 262144, 30, 655371, 262145, 30, 11, 327677, 30, 655371, 327678, 30, 11, 327680, 30, 655371, 327681, 30, 11, 393213, 30, 655371, 393214, 30, 11, 393216, 30, 655371, 393217, 30, 11, 458749, 30, 655371, 458750, 30, 11, 458752, 30, 655371, 458753, 30, 11, 524285, 30, 655371, 524286, 30, 11, 524288, 30, 655371, 524289, 30, 11, 589821, 30, 655371, 589822, 30, 11, 589824, 30, 1048576, 589825, 30, 1048576, 655357, 30, 1048576, 655358, 30, 1048576, 131072, 31, 1, 131073, 31, 1, 196605, 31, 1, 196606, 31, 1, 196607, 31, 1, 196608, 31, 655371, 196609, 31, 11, 262141, 31, 655371, 262142, 31, 11, 262144, 31, 655371, 262145, 31, 11, 327677, 31, 655371, 327678, 31, 11, 327680, 31, 655371, 327681, 31, 11, 393213, 31, 655371, 393214, 31, 11, 393216, 31, 655371, 393217, 31, 11, 458749, 31, 655371, 458750, 31, 11, 458752, 31, 655371, 458753, 31, 11, 524285, 31, 655371, 524286, 31, 11, 524288, 31, 655371, 524289, 31, 11, 589821, 31, 655371, 589822, 31, 11, 589823, 31, 1441802, 589824, 31, 1048576, 589825, 31, 1048576, 655357, 31, 1048576, 655358, 31, 1048576, 131072, 32, 1, 131073, 32, 1, 196605, 32, 1, 196606, 32, 1, 196607, 32, 1, 196608, 32, 655371, 196609, 32, 11, 262141, 32, 655371, 262142, 32, 11, 262144, 32, 655371, 262145, 32, 11, 327677, 32, 655371, 327678, 32, 11, 327680, 32, 655371, 327681, 32, 11, 393213, 32, 655371, 393214, 32, 11, 393216, 32, 655371, 393217, 32, 11, 458749, 32, 655371, 458750, 32, 11, 458752, 32, 655371, 458753, 32, 11, 524285, 32, 655371, 524286, 32, 11, 524288, 32, 655371, 524289, 32, 11, 589821, 32, 655371, 589822, 32, 11, 589824, 32, 1048576, 589825, 32, 1048576, 655357, 32, 1048576, 655358, 32, 1048576, 131072, 33, 1, 131073, 33, 1, 196605, 33, 1, 196606, 33, 1, 196607, 33, 1, 196609, 33, 11, 262141, 33, 655371, 262145, 33, 11, 327677, 33, 655371, 327681, 33, 11, 393213, 33, 655371, 393217, 33, 11, 458749, 33, 655371, 458753, 33, 11, 524285, 33, 655371, 524289, 33, 11, 589821, 33, 655371, 589824, 33, 1048576, 589825, 33, 1048576, 655357, 33, 1048576, 655358, 33, 1048576, 655359, 33, 1441796, 131072, 34, 1, 131073, 34, 1, 196605, 34, 1, 196606, 34, 1, 196607, 34, 1, 196609, 34, 11, 262141, 34, 655371, 262145, 34, 11, 327677, 34, 655371, 327681, 34, 11, 393213, 34, 655371, 393217, 34, 11, 458749, 34, 655371, 458753, 34, 11, 524285, 34, 655371, 524289, 34, 11, 589821, 34, 655371, 589824, 34, 1048576, 589825, 34, 1048576, 655357, 34, 1048576, 655358, 34, 1048576, 655359, 34, 1048584, 131072, 35, 1, 131073, 35, 1, 196605, 35, 1, 196606, 35, 1, 196607, 35, 1, 196608, 35, 1441803, 196609, 35, 13, 262141, 35, 1441805, 262142, 35, 1441803, 262143, 35, 1441803, 262144, 35, 1441803, 262145, 35, 13, 327677, 35, 1441805, 327678, 35, 1441803, 327679, 35, 1441803, 327680, 35, 1441803, 327681, 35, 13, 393213, 35, 1441805, 393214, 35, 1441803, 393215, 35, 1441803, 393216, 35, 1441803, 393217, 35, 13, 458749, 35, 1441805, 458750, 35, 1441803, 458751, 35, 1441803, 458752, 35, 1441803, 458753, 35, 13, 524285, 35, 1441805, 524286, 35, 1441803, 524287, 35, 1441803, 524288, 35, 1441803, 524289, 35, 13, 589821, 35, 1441805, 589822, 35, 1441803, 589823, 35, 1441803, 589824, 35, 1048576, 589825, 35, 1441807, 655357, 35, 1441807, 655358, 35, 1048576, 655359, 35, 1048576, 655361, 35, 1441807, 720893, 35, 1441807, 720896, 35, 1376271, 720897, 35, 1441807, 786429, 35, 1441807, 786430, 35, 1376271, 786431, 35, 1376271, 786433, 35, 0, 851965, 35, 0, 0, 65533, 4, 1, 65533, 4, 2, 65533, 1441797, 65533, 65533, 5, 65534, 65533, 4, 65535, 65533, 4, -196608, 65533, 1, -196607, 65533, 1, -196606, 65533, 1, -131075, 65533, 1, -131074, 65533, 1, -131073, 65533, 1, -131072, 65533, 1048587, -131071, 65533, 1048587, -131070, 65533, 1048589, -65539, 65533, 655373, -65538, 65533, 1048587, -65537, 65533, 1048587, -65536, 65533, 1048587, -65535, 65533, 1048587, -65534, 65533, 1048589, -3, 65533, 655373, -2, 65533, 1048587, -1, 65533, 1048587, 0, 65534, 0, 1, 65534, 0, 2, 65534, 1048580, 65533, 65534, 1441796, 65534, 65534, 0, 65535, 65534, 0, -196608, 65534, 1, -196607, 65534, 1, -196606, 65534, 1, -131075, 65534, 1, -131074, 65534, 1, -131073, 65534, 1, -131070, 65534, 11, -65539, 65534, 655371, -65534, 65534, 11, -3, 65534, 655371, 0, 65535, 0, 1, 65535, 0, 2, 65535, 1048580, 65533, 65535, 1441796, 65534, 65535, 0, 65535, 65535, 0, -196608, 65535, 1, -196607, 65535, 1, -196606, 65535, 1, -131075, 65535, 1, -131074, 65535, 1, -131073, 65535, 1, -131070, 65535, 11, -65539, 65535, 655371, -65534, 65535, 11, -3, 65535, 655371 </int_array>
 				</dictionary>
 				<dictionary  shared="false">
 					<string> "_editor_clip_" </string>
 					<int> 0 </int>
 					<string> "_editor_floor_" </string>
-					<vector3> 0, 2, 0 </vector3>
+					<vector3> -3, 12, 35 </vector3>
 				</dictionary>
 				<resource  resource_type="PackedScene" path="res://scenes/ball.xml">  </resource>
 				<node_path> "." </node_path>
@@ -599,16 +300,16 @@
 							<bool> False </bool>
 							<string> "snap_rotation_step" </string>
 							<real> 0.261799 </real>
+							<string> "zoom" </string>
+							<real> 1 </real>
 							<string> "snap_step" </string>
 							<vector2> 10, 10 </vector2>
 							<string> "snap_relative" </string>
 							<bool> False </bool>
-							<string> "zoom" </string>
-							<real> 1 </real>
-							<string> "snap_rotation_offset" </string>
-							<real> 0 </real>
 							<string> "snap_grid" </string>
 							<bool> False </bool>
+							<string> "snap_rotation_offset" </string>
+							<real> 0 </real>
 							<string> "snap_show_grid" </string>
 							<bool> False </bool>
 							<string> "snap_offset" </string>
@@ -620,10 +321,12 @@
 						</dictionary>
 						<string> "3D" </string>
 						<dictionary  shared="false">
-							<string> "fov" </string>
-							<real> 45 </real>
+							<string> "deflight_rot_y" </string>
+							<real> 0.628319 </real>
 							<string> "zfar" </string>
 							<real> 500 </real>
+							<string> "fov" </string>
+							<real> 45 </real>
 							<string> "viewports" </string>
 							<array  len="4" shared="false">
 								<dictionary  shared="false">
@@ -691,24 +394,22 @@
 									<vector3> 0, 0, 0 </vector3>
 								</dictionary>
 							</array>
-							<string> "deflight_rot_y" </string>
-							<real> 0.628319 </real>
-							<string> "default_light" </string>
-							<bool> True </bool>
 							<string> "viewport_mode" </string>
 							<int> 1 </int>
+							<string> "default_light" </string>
+							<bool> True </bool>
 							<string> "ambient_light_color" </string>
 							<color> 0.15, 0.15, 0.15, 1 </color>
 							<string> "show_grid" </string>
 							<bool> True </bool>
-							<string> "znear" </string>
-							<real> 0.1 </real>
 							<string> "show_origin" </string>
 							<bool> True </bool>
-							<string> "deflight_rot_x" </string>
-							<real> 0.942478 </real>
+							<string> "znear" </string>
+							<real> 0.1 </real>
 							<string> "default_srgb" </string>
 							<bool> False </bool>
+							<string> "deflight_rot_x" </string>
+							<real> 0.942478 </real>
 						</dictionary>
 					</dictionary>
 					<string> "__editor_run_settings__" </string>
@@ -723,12 +424,13 @@
 				</dictionary>
 				<node_path> "../Camera" </node_path>
 				<transform> 1, 0, 0, 0, 0.93417, 0.356828, 0, -0.356828, 0.93417, 0, 4.5931, 8.17328 </transform>
+				<real> 0.1 </real>
 				<real> 200 </real>
 				<int> 1048575 </int>
-				<resource  resource_type="Environment" path="local://9">  </resource>
+				<resource  resource_type="Environment" path="local://1">  </resource>
 			</array>
 			<string> "nodes" </string>
-			<int_array  len="1063"> 				-1, -1, 1, 0, -1, 4, 2, 0, 3, 1, 4, 2, 5, 3, 0, 0, 0, 1, 6, -1, 3, 2, 0, 3, 1, 4, 2, 0, 1, 0, 7, 7, -1, 15, 2, 0, 3, 1, 4, 2, 8, 2, 9, 4, 10, 5, 11, 6, 12, 7, 13, 4, 14, 5, 15, 8, 16, 9, 17, 10, 18, 10, 5, 11, 0, 2, 0, 19, 19, -1, 21, 2, 0, 3, 1, 4, 2, 14, 5, 20, 2, 21, 12, 22, 2, 23, 2, 24, 9, 25, 9, 26, 9, 27, 4, 28, 4, 29, 4, 30, 4, 31, 4, 32, 13, 33, 5, 34, 14, 35, 15, 36, 2, 0, 2, 0, 37, 37, -1, 6, 2, 0, 3, 1, 38, 7, 4, 2, 39, 6, 40, 4, 0, 1, 0, 41, 41, -1, 23, 2, 0, 3, 1, 38, 16, 4, 2, 14, 5, 42, 2, 43, 4, 44, 13, 45, 8, 46, 17, 47, 17, 48, 4, 49, 18, 50, 19, 51, 20, 52, 21, 53, 8, 54, 22, 55, 13, 56, 23, 57, 9, 58, 18, 59, 24, 0, 1, 0, 61, 60, -1, 25, 2, 0, 3, 1, 38, 25, 4, 2, 8, 2, 9, 4, 10, 5, 11, 26, 12, 1, 13, 4, 14, 5, 62, 13, 63, 8, 15, 18, 16, 9, 64, 4, 65, 4, 66, 13, 67, 4, 68, 4, 69, 2, 70, 13, 71, 10, 72, 10, 5, 27, 0, 6, 0, 73, 73, -1, 18, 2, 0, 3, 1, 38, 28, 4, 2, 14, 5, 20, 2, 21, 29, 22, 2, 23, 2, 24, 9, 25, 9, 26, 9, 27, 4, 28, 4, 29, 4, 30, 4, 31, 4, 32, 13, 0, 6, 0, 37, 37, -1, 5, 2, 0, 3, 1, 4, 2, 39, 26, 40, 4, 0, 1, 0, 7, 74, -1, 16, 2, 0, 3, 1, 38, 30, 4, 2, 8, 2, 9, 4, 10, 5, 11, 31, 12, 7, 13, 4, 14, 5, 15, 8, 16, 9, 17, 10, 18, 10, 5, 32, 0, 9, 0, 19, 19, -1, 22, 2, 0, 3, 1, 38, 33, 4, 2, 14, 5, 20, 2, 21, 12, 22, 2, 23, 2, 24, 9, 25, 9, 26, 9, 27, 4, 28, 4, 29, 4, 30, 4, 31, 4, 32, 13, 33, 5, 34, 34, 35, 15, 36, 2, 0, 9, 0, 37, 37, -1, 6, 2, 0, 3, 1, 38, 7, 4, 2, 39, 31, 40, 4, 0, 1, 0, 75, 75, -1, 20, 2, 0, 3, 1, 38, 35, 4, 2, 8, 4, 9, 4, 10, 36, 11, 37, 12, 1, 13, 4, 76, 38, 77, 39, 78, 4, 79, 36, 80, 4, 81, 40, 82, 41, 83, 42, 84, 9, 85, 2, 0, 12, 0, 37, 37, -1, 5, 2, 0, 3, 1, 4, 2, 39, 37, 40, 4, 0, 12, 0, 86, 86, -1, 66, 2, 0, 3, 1, 38, 43, 4, 2, 14, 5, 20, 2, 21, 22, 22, 2, 23, 2, 24, 9, 25, 9, 26, 18, 27, 4, 28, 4, 29, 4, 30, 4, 31, 4, 32, 13, 87, 44, 88, 45, 89, 2, 90, 46, 91, 47, 92, 10, 93, 48, 94, 40, 95, 4, 96, 9, 97, 49, 98, 9, 99, 50, 100, 9, 101, 9, 102, 9, 103, 9, 104, 9, 105, 9, 106, 8, 107, 8, 108, 9, 109, 4, 110, 8, 111, 9, 112, 9, 113, 9, 114, 9, 115, 9, 116, 9, 117, 9, 118, 9, 119, 9, 120, 9, 121, 9, 122, 9, 123, 9, 124, 9, 125, 9, 126, 23, 127, 9, 128, 51, 129, 52, 130, 53, 131, 8, 132, 51, 133, 8, 134, 54, 0, 12, 0, 37, 135, -1, 6, 2, 0, 3, 1, 38, 39, 4, 2, 39, 38, 40, 4, 0, 1, 0, 7, 136, -1, 16, 2, 0, 3, 1, 38, 55, 4, 2, 8, 2, 9, 4, 10, 5, 11, 6, 12, 7, 13, 4, 14, 5, 15, 8, 16, 9, 17, 10, 18, 10, 5, 56, 0, 16, 0, 19, 19, -1, 21, 2, 0, 3, 1, 4, 2, 14, 5, 20, 2, 21, 12, 22, 2, 23, 2, 24, 9, 25, 9, 26, 9, 27, 4, 28, 4, 29, 4, 30, 4, 31, 4, 32, 13, 33, 5, 34, 14, 35, 15, 36, 2, 0, 16, 0, 37, 37, -1, 6, 2, 0, 3, 1, 38, 7, 4, 2, 39, 6, 40, 4, 0, 1, 0, 7, 137, -1, 16, 2, 0, 3, 1, 38, 57, 4, 2, 8, 2, 9, 4, 10, 5, 11, 6, 12, 7, 13, 4, 14, 5, 15, 8, 16, 9, 17, 10, 18, 10, 5, 58, 0, 19, 0, 19, 19, -1, 21, 2, 0, 3, 1, 4, 2, 14, 5, 20, 2, 21, 12, 22, 2, 23, 2, 24, 9, 25, 9, 26, 9, 27, 4, 28, 4, 29, 4, 30, 4, 31, 4, 32, 13, 33, 5, 34, 14, 35, 15, 36, 2, 0, 19, 0, 37, 37, -1, 6, 2, 0, 3, 1, 38, 7, 4, 2, 39, 6, 40, 4, 0, 1, 0, 73, 73, -1, 18, 2, 0, 3, 1, 38, 59, 4, 2, 14, 5, 20, 2, 21, 22, 22, 2, 23, 2, 24, 9, 25, 9, 26, 9, 27, 4, 28, 4, 29, 4, 30, 4, 31, 4, 32, 13, 0, 1, 0, 41, 138, -1, 23, 2, 0, 3, 1, 38, 60, 4, 2, 14, 5, 42, 2, 43, 4, 44, 13, 45, 61, 46, 17, 47, 17, 48, 4, 49, 18, 50, 19, 51, 20, 52, 21, 53, 8, 54, 22, 55, 13, 56, 23, 57, 9, 58, 18, 59, 24, 0, 1, 0, 139, 139, -1, 15, 2, 0, 3, 1, 38, 62, 4, 2, 140, 63, 141, 4, 142, 4, 143, 24, 144, 64, 145, 2, 146, 2, 147, 2, 148, 8, 149, 65, 5, 66, 0, 0, 0, 1, 150, -1, 3, 2, 0, 3, 1, 4, 2, 0, 25, 0, 61, 151, 67, 6, 2, 68, 3, 1, 38, 69, 16, 61, 5, 70, 152, 71, 0, 25, 0, 153, 153, -1, 14, 2, 0, 3, 1, 38, 72, 4, 2, 154, 13, 155, 21, 156, 42, 157, 73, 158, 5, 159, 4, 160, 74, 161, 22, 162, 9, 163, 9, 0, 0, 0, 164, 164, -1, 4, 2, 0, 3, 1, 4, 2, 161, 75, 0 </int_array>
+			<int_array  len="302"> 				-1, -1, 1, 0, -1, 4, 2, 0, 3, 1, 4, 2, 5, 3, 0, 0, 0, 1, 6, -1, 3, 2, 0, 3, 1, 4, 2, 0, 1, 0, 7, 7, -1, 23, 2, 0, 3, 1, 8, 4, 4, 2, 9, 5, 10, 2, 11, 6, 12, 7, 13, 8, 14, 9, 15, 9, 16, 2, 17, 10, 18, 11, 19, 12, 20, 13, 21, 14, 22, 15, 23, 7, 24, 7, 25, 10, 26, 11, 27, 12, 0, 1, 0, 7, 28, -1, 23, 2, 0, 3, 1, 8, 4, 4, 2, 9, 5, 10, 2, 11, 6, 12, 7, 13, 16, 14, 9, 15, 9, 16, 6, 17, 10, 18, 11, 19, 12, 20, 13, 21, 14, 22, 15, 23, 7, 24, 7, 25, 10, 26, 11, 27, 12, 0, 1, 0, 7, 29, -1, 23, 2, 0, 3, 1, 8, 17, 4, 2, 9, 5, 10, 2, 11, 6, 12, 7, 13, 18, 14, 9, 15, 9, 16, 6, 17, 10, 18, 11, 19, 12, 20, 13, 21, 14, 22, 15, 23, 7, 24, 7, 25, 10, 26, 11, 27, 12, 0, 1, 0, 30, 30, -1, 14, 2, 0, 3, 1, 4, 2, 31, 19, 32, 6, 33, 6, 34, 20, 35, 21, 36, 2, 37, 2, 38, 2, 39, 14, 40, 22, 5, 23, 0, 0, 0, 1, 41, -1, 3, 2, 0, 3, 1, 4, 2, 0, 6, 0, 43, 42, 24, 5, 2, 25, 3, 1, 8, 26, 5, 27, 44, 28, 0, 6, 0, 45, 45, -1, 14, 2, 0, 3, 1, 8, 29, 4, 2, 46, 7, 47, 13, 48, 30, 49, 31, 50, 5, 51, 6, 52, 32, 53, 15, 54, 10, 55, 10, 0, 0, 0, 56, 56, -1, 4, 2, 0, 3, 1, 4, 2, 53, 33, 0 </int_array>
 			<string> "conns" </string>
 			<int_array  len="0"> 				 </int_array>
 		</dictionary>
