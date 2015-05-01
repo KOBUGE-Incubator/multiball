@@ -8,16 +8,33 @@ var camera # The camera itself
 var camera_offset = Vector3(0, 3, 6) # The offset from the camera
 var rotation_y = 0 # the rotation of the camera on y
 var rotation_y_speed = 0 # The speed of rotation on Y
+var start_pos = Vector3(0,5,0) # The starting position # TODO
+var should_respawn = false # Should we respawn?
 
 func _ready():
 	# Get needed nodes
 	camera = get_node(camera_path)
-	
+	# Start over
+	respawn();
 	set_fixed_process(true)
 	set_process(true)
+	set_process_input(true)
 
 func set_color(color):
 	get_node("mesh").get_material_override().set_shader_param("Color",color)
+
+func respawn():
+	set_translation(start_pos)
+	set_linear_velocity(Vector3(0,0,0))
+	set_angular_velocity(Vector3(0,0,0))
+	set_rotation(Vector3(0,0,0))
+	rotation_y = 0
+	rotation_y_speed = 0
+	set_color(Color(rand_range(0,1),rand_range(0,1),rand_range(0,1)))
+
+func _input(event):
+	if(event.is_action("respawn") && event.is_pressed() && !event.is_echo()):
+		should_respawn = true
 
 func _process(delta):
 	# Transform the offset, so it is in "local" coords
@@ -34,6 +51,10 @@ func _process(delta):
 	camera.set_transform(current_transform) # Todo, interpolate the camera...
 
 func _fixed_process(delta):
+	if(should_respawn): # Must we respawn
+		should_respawn = false
+		respawn()
+		return # Don't calculate movement
 	var force = Vector3(0, 0, 0) # The force
 	if(Input.is_action_pressed("forward")):
 		force += Vector3(0, 0, -1) # Move forward
