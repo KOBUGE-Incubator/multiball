@@ -5,15 +5,20 @@ export var speed = 20.0 # The speed of the ball
 export var rotation_speed = 20.0 # The speed of rotaion of the ball
 export var camera_path = NodePath("../camera") # The path to the camera
 var camera # The camera itself
-var camera_offset = Vector3(0, 3, 6) # The offset from the camera
+var default_camera_offset = Vector3(0, 3, 6) # The default offset from the camera
+var camera_offset = default_camera_offset # The offset from the camera
+var target_camera_offset = camera_offset # An offset towards which we will move the camera
+var target_camera_pos = camera_offset #  A point towards which we will move the camera
 var rotation_y = 0 # the rotation of the camera on y
 var rotation_y_speed = 0 # The speed of rotation on Y
 var start_pos = Vector3(0,5,0) # The starting position # TODO
 var should_respawn = false # Should we respawn?
+var phisics_space # the phisics space, used to perform raycasts
 
 func _ready():
-	# Get needed nodes
+	# Get needed nodes and stuff
 	camera = get_node(camera_path)
+	phisics_space = get_world().get_direct_space_state()
 	# Start over
 	respawn();
 	set_fixed_process(true)
@@ -30,6 +35,9 @@ func respawn():
 	set_rotation(Vector3(0,0,0))
 	rotation_y = 0
 	rotation_y_speed = 0
+	for i in range(10):
+		if(OS.get_unix_time() % 10 < 5):
+			var tmp = rand_range(0,1)
 	set_color(Color(rand_range(0,1),rand_range(0,1),rand_range(0,1)))
 
 func _input(event):
@@ -37,20 +45,23 @@ func _input(event):
 		should_respawn = true
 
 func _process(delta):
-	# Transform the offset, so it is in "local" coords
-	var matrix = get_transform().inverse().basis
-	rotation_y_speed = lerp(rotation_y_speed,0,delta*2)
+	# Interpolate values
 	rotation_y += rotation_y_speed*delta
+	# Transform the offset, so it is in "local" coords
 	var transform_matrix = Matrix3(Vector3(0, 1, 0), rotation_y)
 	var transformed_offset = transform_matrix.xform(camera_offset)
 	# Place the camera in the right place
-	camera.set_translation(get_translation() + transformed_offset) # Todo, interpolate the camera...
+	var new_target_camera_pos = get_translation() + transformed_offset
+	target_camera_pos = (target_camera_pos + new_target_camera_pos)/2
+	camera.set_translation(target_camera_pos) # Todo, interpolate the camera...
 	# Rotate the camera, so it looks at the ball
 	var current_transform = camera.get_transform()
 	current_transform = current_transform.looking_at(get_translation(), Vector3(0, 1, 0))
 	camera.set_transform(current_transform) # Todo, interpolate the camera...
 
 func _fixed_process(delta):
+	camera_offset = camera_offset.linear_interpolate(target_camera_offset, delta*3)
+	rotation_y_speed = lerp(rotation_y_speed,0,delta*2)
 	if(should_respawn): # Must we respawn
 		should_respawn = false
 		respawn()
@@ -71,4 +82,23 @@ func _fixed_process(delta):
 	force = transform_matrix.xform(force)
 	# Apply the forces
 	set_linear_velocity(get_linear_velocity() + force.normalized()*speed*delta)
+	
+	# Check if we can see the ball, and if not, move the camera
+	var camera_pos = get_translation() + transform_matrix.xform(target_camera_offset)
+	var intersection = phisics_space.intersect_ray(camera_pos, get_translation(), [self])
+	if(intersection.has("position")): # We don't see the ball now
+		# Will we be able to see ball if we move the camera up?
+		var top_intersection = phisics_space.intersect_ray(camera_pos + Vector3(0, 2, -1), get_translation(), [self])
+		if(top_intersection.has("position")): # We won't see it from above, and our only solution is to zoom in
+			var direction = (camera_pos - get_translation()).normalized()
+			target_camera_offset = direction*((intersection["position"] - camera_pos).dot(direction))
+		else:
+			target_camera_offset = camera_pos + Vector3(0, 2, -1) # Otherwise we will just move the camera up
+		target_camera_offset.x = 0
+	elif(target_camera_offset.distance_to(default_camera_offset) > 0.2): # We see the ball but it would be nice to go back to the original position
+		# Will we be able to see ball if we move the camera to the default position?
+		var default_intersection = phisics_space.intersect_ray(get_translation() + transform_matrix.xform(default_camera_offset), get_translation(), [self])
+		if(! default_intersection.has("position")): # We will see it if we go back to defaults
+			target_camera_offset = default_camera_offset
+		
 
