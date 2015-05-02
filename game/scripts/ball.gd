@@ -86,17 +86,20 @@ func _fixed_process(delta):
 	target_camera_offset += force/2
 	target_camera_offset = target_camera_offset.linear_interpolate(default_camera_offset, delta*10)
 	# Check if we can see the ball, and if not, move the camera
-	return
 	var camera_pos = get_translation() + transform_matrix.xform(target_camera_offset)
 	var intersection = phisics_space.intersect_ray(camera_pos, get_translation(), [self])
 	if(intersection.has("position")): # We don't see the ball now
 		# Will we be able to see ball if we move the camera up?
 		var top_intersection = phisics_space.intersect_ray(camera_pos + Vector3(0, 2, -1), get_translation(), [self])
-		if(top_intersection.has("position")): # We won't see it from above, and our only solution is to zoom in
+		# Will we be able to see ball if we move the camera down?
+		var bottom_intersection = phisics_space.intersect_ray(camera_pos + Vector3(0, -2, -1), get_translation(), [self])
+		if(top_intersection.has("position") && bottom_intersection.has("position")): # We won't see it from above or below, and our only solution is to zoom in
 			var direction = (camera_pos - get_translation()).normalized()
 			target_camera_offset = direction*((intersection["position"] - camera_pos).dot(direction))
-		else:
+		elif(bottom_intersection.has("position")):
 			target_camera_offset = camera_pos + Vector3(0, 2, -1) # Otherwise we will just move the camera up
+		else:
+			target_camera_offset = camera_pos + Vector3(0, -2, -1) # Otherwise we will just move the camera down
 		target_camera_offset.x = 0
 	elif(target_camera_offset.distance_to(default_camera_offset) > 0.2): # We see the ball but it would be nice to go back to the original position
 		# Will we be able to see ball if we move the camera to the default position?
