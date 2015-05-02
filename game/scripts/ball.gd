@@ -83,8 +83,9 @@ func _fixed_process(delta):
 	# Apply the forces
 	set_linear_velocity(get_linear_velocity() + force.normalized()*speed*delta)
 	target_camera_offset += force/2
-	
+	target_camera_offset = target_camera_offset.linear_interpolate(default_camera_offset, delta*10)
 	# Check if we can see the ball, and if not, move the camera
+	return
 	var camera_pos = get_translation() + transform_matrix.xform(target_camera_offset)
 	var intersection = phisics_space.intersect_ray(camera_pos, get_translation(), [self])
 	if(intersection.has("position")): # We don't see the ball now
@@ -101,6 +102,8 @@ func _fixed_process(delta):
 		var default_intersection = phisics_space.intersect_ray(get_translation() + transform_matrix.xform(default_camera_offset), get_translation(), [self])
 		if(! default_intersection.has("position")): # We will see it if we go back to defaults
 			target_camera_offset = default_camera_offset
+		elif(target_camera_offset.distance_to(default_camera_offset) > 10):# Don't get too far
+			target_camera_offset = default_camera_offset
 			
-		
+			
 
