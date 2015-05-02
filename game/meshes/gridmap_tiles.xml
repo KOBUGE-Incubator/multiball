@@ -34,8 +34,8 @@
 		<int name="storage"> 0 </int>
 
 	</resource>
-	<resource type="ConcavePolygonShape" path="local://3">
-		<vector3_array name="data" len="36"> 			-1.4999, 1.5, -1.4999, -1.4999, -1.4999, 1.5, -1.4999, -1.4999, -1.4999, 1.5, 1.5, -1.4999, -1.4999, -1.4999, -1.4999, 1.5, -1.4999, -1.4999, 1.5, 1.5, 1.5, 1.5, -1.4999, -1.4999, 1.5, -1.4999, 1.5, -1.4999, 1.5, 1.5, 1.5, -1.4999, 1.5, -1.4999, -1.4999, 1.5, -1.4999, -1.4999, -1.4999, 1.5, -1.4999, 1.5, 1.5, -1.4999, -1.4999, 1.5, 1.5, -1.4999, -1.4999, 1.5, 1.5, -1.4999, 1.5, -1.4999, -1.4999, 1.5, 1.5, -1.4999, -1.4999, 1.5, -1.4999, 1.5, -1.4999, -1.4999, 1.5, -1.4999, -1.4999, -1.4999, -1.4999, 1.5, 1.5, -1.4999, 1.5, 1.5, -1.4999, 1.5, -1.4999, -1.4999, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, -1.4999, 1.5, -1.4999, 1.5, 1.5, -1.4999, -1.4999, 1.5, 1.5, -1.4999, 1.5, -1.4999, -1.4999, -1.4999, 1.5, 1.5, 1.5, -1.4999, 1.5, 1.5, 1.5, 1.5, -1.4999 </vector3_array>
+	<resource type="BoxShape" path="local://3">
+		<vector3 name="extents"> 1.5, 1.5, 1.5 </vector3>
 
 	</resource>
 	<resource type="Mesh" path="local://4">
@@ -78,7 +78,6 @@
 	</resource>
 	<resource type="Mesh" path="local://7">
 		<aabb name="custom_aabb/custom_aabb"> 0, 0, 0, 0, 0, 0 </aabb>
-		<string name="resource/name"> "Mesh.031" </string>
 		<dictionary name="surfaces/0" shared="false">
 			<string> "alphasort" </string>
 			<bool> False </bool>
@@ -116,7 +115,6 @@
 	</resource>
 	<resource type="Mesh" path="local://10">
 		<aabb name="custom_aabb/custom_aabb"> 0, 0, 0, 0, 0, 0 </aabb>
-		<string name="resource/name"> "Mesh.035" </string>
 		<dictionary name="surfaces/0" shared="false">
 			<string> "alphasort" </string>
 			<bool> False </bool>
@@ -154,7 +152,6 @@
 	</resource>
 	<resource type="Mesh" path="local://13">
 		<aabb name="custom_aabb/custom_aabb"> 0, 0, 0, 0, 0, 0 </aabb>
-		<string name="resource/name"> "Mesh.030" </string>
 		<dictionary name="surfaces/0" shared="false">
 			<string> "alphasort" </string>
 			<bool> False </bool>
@@ -192,7 +189,6 @@
 	</resource>
 	<resource type="Mesh" path="local://16">
 		<aabb name="custom_aabb/custom_aabb"> 0, 0, 0, 0, 0, 0 </aabb>
-		<string name="resource/name"> "Mesh.032" </string>
 		<dictionary name="surfaces/0" shared="false">
 			<string> "alphasort" </string>
 			<bool> False </bool>
@@ -230,7 +226,6 @@
 	</resource>
 	<resource type="Mesh" path="local://19">
 		<aabb name="custom_aabb/custom_aabb"> 0, 0, 0, 0, 0, 0 </aabb>
-		<string name="resource/name"> "Mesh.029" </string>
 		<dictionary name="surfaces/0" shared="false">
 			<string> "alphasort" </string>
 			<bool> False </bool>
@@ -268,7 +263,6 @@
 	</resource>
 	<resource type="Mesh" path="local://22">
 		<aabb name="custom_aabb/custom_aabb"> 0, 0, 0, 0, 0, 0 </aabb>
-		<string name="resource/name"> "Mesh.034" </string>
 		<dictionary name="surfaces/0" shared="false">
 			<string> "alphasort" </string>
 			<bool> False </bool>
@@ -306,7 +300,6 @@
 	</resource>
 	<resource type="Mesh" path="local://25">
 		<aabb name="custom_aabb/custom_aabb"> 0, 0, 0, 0, 0, 0 </aabb>
-		<string name="resource/name"> "Mesh.028" </string>
 		<dictionary name="surfaces/0" shared="false">
 			<string> "alphasort" </string>
 			<bool> False </bool>
@@ -610,7 +603,6 @@
 	</resource>
 	<resource type="Mesh" path="local://49">
 		<aabb name="custom_aabb/custom_aabb"> 0, 0, 0, 0, 0, 0 </aabb>
-		<string name="resource/name"> "Mesh.033" </string>
 		<dictionary name="surfaces/0" shared="false">
 			<string> "alphasort" </string>
 			<bool> False </bool>
