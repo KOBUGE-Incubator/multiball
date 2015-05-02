@@ -10,7 +10,7 @@
 	<resource type="MaterialShaderGraph" path="local://2">
 		<dictionary name="_code" shared="false">
 			<string> "fragment" </string>
-			<string> "vec3 nd1sl5=vec3(UV,0);&#000a;vec3 DIFFUSE_OUT=vec3(0,0,0);&#000a;float ALPHA_OUT=0;&#000a;uniform color Color=vec4(1,0,0,1);&#000a;vec3 nd3sl0=Color.rgb;&#000a;uniform texture Tex;vec4 rt_read_tex2=tex(Tex,nd1sl5.xy);&#000a;vec3 nd2sl0=rt_read_tex2.rgb;&#000a;float nd2sl1=rt_read_tex2.a;&#000a;vec3 nd4sl0=vec3(1.0)-(vec3(1.0)-nd3sl0)*(vec3(1.0)-nd2sl0);&#000a;float nd5sl0=0.9;&#000a;vec3 nd7sl0=vec3(0.061708,0.061708,0.061708);&#000a;float nd7sl1=1;&#000a;vec3 nd8sl0=nd4sl0*nd7sl0;&#000a;DIFFUSE_OUT=nd4sl0;&#000a;ALPHA_OUT=nd5sl0;&#000a;EMISSION=nd8sl0;&#000a;DIFFUSE_ALPHA=vec4(DIFFUSE_OUT,ALPHA_OUT);&#000a;" </string>
+			<string> "vec3 nd1sl5=vec3(UV,0);&#000a;vec3 DIFFUSE_OUT=vec3(0,0,0);&#000a;float ALPHA_OUT=0;&#000a;uniform color Color=vec4(1,0,0,1);&#000a;vec3 nd3sl0=Color.rgb;&#000a;uniform texture Tex;vec4 rt_read_tex2=tex(Tex,nd1sl5.xy);&#000a;vec3 nd2sl0=rt_read_tex2.rgb;&#000a;float nd2sl1=rt_read_tex2.a;&#000a;vec3 nd4sl0=vec3(1.0)-(vec3(1.0)-nd3sl0)*(vec3(1.0)-nd2sl0);&#000a;vec3 nd7sl0=vec3(0.061708,0.061708,0.061708);&#000a;float nd7sl1=1;&#000a;float nd5sl0=0.9;&#000a;vec3 nd8sl0=nd4sl0*nd7sl0;&#000a;DIFFUSE_OUT=nd4sl0;&#000a;EMISSION=nd8sl0;&#000a;DIFFUSE=DIFFUSE_OUT;&#000a;" </string>
 			<string> "fragment_ofs" </string>
 			<int> 0 </int>
 			<string> "light" </string>
@@ -50,12 +50,9 @@
 					<vector2> 1246, 20 </vector2>
 					<nil>  </nil>
 					<nil>  </nil>
-					<array  len="9" shared="false">
+					<array  len="6" shared="false">
 						<int> 0 </int>
 						<int> 4 </int>
-						<int> 0 </int>
-						<int> 1 </int>
-						<int> 5 </int>
 						<int> 0 </int>
 						<int> 4 </int>
 						<int> 8 </int>
@@ -148,7 +145,7 @@
 		<bool name="flags/unshaded"> False </bool>
 		<bool name="flags/visible"> True </bool>
 		<int name="params/blend_mode"> 0 </int>
-		<int name="params/depth_draw"> 0 </int>
+		<int name="params/depth_draw"> 2 </int>
 		<real name="params/line_width"> 0 </real>
 		<string name="resource/name"> "Ball shader" </string>
 		<resource name="shader/shader" resource_type="Shader" path="local://2">  </resource>

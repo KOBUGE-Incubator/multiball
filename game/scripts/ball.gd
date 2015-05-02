@@ -34,7 +34,7 @@ func respawn():
 	set_linear_velocity(Vector3(0,0,0))
 	set_angular_velocity(Vector3(0,0,0))
 	set_rotation(Vector3(0,0,0))
-	rotation_y = 0
+	rotation_y = round(rand_range(0, 4))*PI/2
 	rotation_y_speed = 0
 	for i in range(10):
 		if(OS.get_unix_time() % 10 < 5):
@@ -90,19 +90,18 @@ func _fixed_process(delta):
 	var intersection = phisics_space.intersect_ray(camera_pos, get_translation(), [self])
 	if(intersection.has("position")): # We don't see the ball now
 		have_not_seen_ball_from += delta
-		if(have_not_seen_ball_from > 0.5): # more than half a sec passed
-			# Will we be able to see ball if we move the camera up?
-			var top_intersection = phisics_space.intersect_ray(camera_pos + Vector3(0, 3, 0), get_translation(), [self])
-			# Will we be able to see ball if we move the camera down?
-			var bottom_intersection = phisics_space.intersect_ray(camera_pos + Vector3(0, -3, 0), get_translation(), [self])
-			if(top_intersection.has("position") && bottom_intersection.has("position")): # We won't see it from above or below, and our only solution is to zoom in
-				var direction = (camera_pos - get_translation()).normalized()
-				target_camera_offset = direction*((intersection["position"] - camera_pos).dot(direction))
-			elif(bottom_intersection.has("position")):
-				target_camera_offset = camera_pos + Vector3(0, 3, 0) # Otherwise we will just move the camera up
-			else:
-				target_camera_offset = camera_pos + Vector3(0, -3, 0) # Otherwise we will just move the camera down
-			target_camera_offset.x = 0
+		# Will we be able to see ball if we move the camera up?
+		var top_intersection = phisics_space.intersect_ray(camera_pos + Vector3(0, 3, 0), get_translation(), [self])
+		# Will we be able to see ball if we move the camera down?
+		var bottom_intersection = phisics_space.intersect_ray(camera_pos + Vector3(0, -3, 0), get_translation(), [self])
+		if(top_intersection.has("position") && bottom_intersection.has("position") && have_not_seen_ball_from > 0.5): # We won't see it from above or below, and our only solution is to zoom in
+			var direction = (camera_pos - get_translation()).normalized()
+			target_camera_offset = direction*((intersection["position"] - camera_pos).dot(direction))
+		elif(bottom_intersection.has("position")):
+			target_camera_offset = target_camera_offset + Vector3(0, 3, 0) # Otherwise we will just move the camera up
+		else:
+			target_camera_offset = target_camera_offset + Vector3(0, -3, 0) # Otherwise we will just move the camera down
+		target_camera_offset.x = 0
 	else:
 		if(target_camera_offset.distance_to(default_camera_offset) > 0.2): # We see the ball but it would be nice to go back to the original position
 			# Will we be able to see ball if we move the camera to the default position?
