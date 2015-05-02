@@ -58,6 +58,7 @@ func _process(delta):
 	var current_transform = camera.get_transform()
 	current_transform = current_transform.looking_at(get_translation(), Vector3(0, 1, 0))
 	camera.set_transform(current_transform) # Todo, interpolate the camera...
+	camera.get_node("../../GUI/FPS").set_text(str(OS.get_frames_per_second(), " FPS/",delta, " ms"))
 
 func _fixed_process(delta):
 	camera_offset = camera_offset.linear_interpolate(target_camera_offset, delta*3)
