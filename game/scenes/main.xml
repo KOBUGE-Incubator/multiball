@@ -260,9 +260,9 @@
 									<string> "use_orthogonal" </string>
 									<bool> False </bool>
 									<string> "x_rot" </string>
-									<real> 0.320796 </real>
+									<real> 1.570796 </real>
 									<string> "y_rot" </string>
-									<real> 20.337887 </real>
+									<real> 20.237875 </real>
 								</dictionary>
 								<dictionary  shared="false">
 									<string> "distance" </string>

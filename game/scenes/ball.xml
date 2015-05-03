@@ -227,7 +227,7 @@
 			<string> "conns" </string>
 			<int_array  len="0"> 				 </int_array>
 			<string> "names" </string>
-			<string_array  len="60">
+			<string_array  len="61">
 				<string> "ball" </string>
 				<string> "RigidBody" </string>
 				<string> "_import_path" </string>
@@ -260,6 +260,7 @@
 				<string> "rotation_carry" </string>
 				<string> "camera_path" </string>
 				<string> "mouse_scale" </string>
+				<string> "mouse_motion_scale" </string>
 				<string> "mesh" </string>
 				<string> "MeshInstance" </string>
 				<string> "geometry/visible" </string>
@@ -292,7 +293,7 @@
 			<string> "node_count" </string>
 			<int> 4 </int>
 			<string> "nodes" </string>
-			<int_array  len="152"> 				-1, -1, 1, 0, -1, 30, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 1, 10, 3, 11, 4, 12, 6, 13, 7, 14, 8, 15, 9, 16, 3, 17, 3, 18, 6, 19, 3, 20, 3, 21, 2, 22, 6, 23, 10, 24, 10, 25, 11, 26, 12, 27, 13, 28, 14, 29, 15, 30, 16, 31, 17, 0, 0, 0, 33, 32, -1, 19, 2, 18, 3, 1, 4, 2, 11, 4, 34, 2, 35, 19, 36, 2, 37, 2, 38, 20, 39, 20, 40, 20, 41, 3, 42, 3, 43, 3, 44, 3, 45, 2, 46, 6, 47, 21, 48, 22, 0, 0, 0, 49, 49, -1, 8, 2, 23, 50, 4, 51, 20, 52, 22, 53, 2, 54, 7, 55, 24, 56, 25, 0, 0, 0, 57, 57, -1, 5, 2, 16, 3, 1, 4, 2, 58, 5, 59, 3, 0 </int_array>
+			<int_array  len="154"> 				-1, -1, 1, 0, -1, 31, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 1, 10, 3, 11, 4, 12, 6, 13, 7, 14, 8, 15, 9, 16, 3, 17, 3, 18, 6, 19, 3, 20, 2, 21, 2, 22, 6, 23, 10, 24, 10, 25, 11, 26, 12, 27, 13, 28, 14, 29, 15, 30, 16, 31, 17, 32, 10, 0, 0, 0, 34, 33, -1, 19, 2, 18, 3, 1, 4, 2, 11, 4, 35, 2, 36, 19, 37, 2, 38, 2, 39, 20, 40, 20, 41, 20, 42, 3, 43, 3, 44, 3, 45, 3, 46, 2, 47, 6, 48, 21, 49, 22, 0, 0, 0, 50, 50, -1, 8, 2, 23, 51, 4, 52, 20, 53, 22, 54, 2, 55, 7, 56, 24, 57, 25, 0, 0, 0, 58, 58, -1, 5, 2, 16, 3, 1, 4, 2, 59, 5, 60, 3, 0 </int_array>
 			<string> "variants" </string>
 			<array  len="26" shared="false">
 				<node_path> "." </node_path>
@@ -309,7 +310,7 @@
 				<resource  resource_type="Script" path="res://scripts/ball.gd">  </resource>
 				<dictionary  shared="false">
 					<string> "__editor_plugin_screen__" </string>
-					<string> "3D" </string>
+					<string> "Script" </string>
 					<string> "__editor_plugin_states__" </string>
 					<dictionary  shared="false">
 						<string> "2D" </string>
@@ -448,10 +449,10 @@
 					</dictionary>
 				</dictionary>
 				<real> 20 </real>
-				<real> 2 </real>
+				<real> 4 </real>
 				<real> 8 </real>
 				<node_path> "" </node_path>
-				<vector2> 0, 5 </vector2>
+				<vector3> -2, 5, 0 </vector3>
 				<node_path> "Icosphere" </node_path>
 				<resource  resource_type="Material" path="local://3">  </resource>
 				<real> 0 </real>
