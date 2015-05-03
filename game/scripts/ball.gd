@@ -3,7 +3,9 @@ extends RigidBody
 
 export var speed = 20.0 # The speed of the ball
 export var rotation_speed = 20.0 # The speed of rotaion of the ball
+export var rotation_carry = 1.0 # How much of the rotation speed is carried over?
 export var camera_path = NodePath("../camera") # The path to the camera
+export var mouse_scale = Vector2(2,3)
 var camera # The camera itself
 var default_camera_offset = Vector3(0, 3, 5) # The default offset from the camera
 var camera_offset = default_camera_offset # The offset from the camera
@@ -11,10 +13,11 @@ var target_camera_offset = camera_offset # An offset towards which we will move 
 var target_camera_pos = camera_offset #  A point towards which we will move the camera
 var rotation_y = 0 # the rotation of the camera on y
 var rotation_y_speed = 0 # The speed of rotation on Y
-var start_pos = Vector3(0,5,0) # The starting position # TODO
+var start_pos = Vector3(-1.5,5,-1.5) # The starting position # TODO
 var should_respawn = false # Should we respawn?
 var phisics_space # the phisics space, used to perform raycasts
 var have_not_seen_ball_from = 0.0 # How much time passed from the last time we saw that ball
+var mouse_pos = Vector2(0,0) # The position of the mouse
 
 func _ready():
 	# Get needed nodes and stuff
@@ -44,11 +47,14 @@ func respawn():
 func _input(event):
 	if(event.is_action("respawn") && event.is_pressed() && !event.is_echo()):
 		should_respawn = true
+	if(event.type == InputEvent.MOUSE_MOTION):
+		mouse_pos = (event.pos / OS.get_window_size() - Vector2(0.5,0.5)) * mouse_scale
 
 func _process(delta):
 	# Transform the offset, so it is in "local" coords
 	# Place the camera in the right place
-	camera.set_translation(target_camera_pos) # Todo, interpolate the camera...
+	var transform_matrix = Matrix3(Vector3(0, 1, 0), rotation_y)
+	camera.set_translation(target_camera_pos + transform_matrix.xform(Vector3(mouse_pos.x, mouse_pos.y, 0)))
 	# Rotate the camera, so it looks at the ball
 	var current_transform = camera.get_transform()
 	current_transform = current_transform.looking_at(get_translation(), Vector3(0, 1, 0))
@@ -75,10 +81,10 @@ func _fixed_process(delta):
 		force += Vector3(0, 0, 1) # Move backward
 	if(Input.is_action_pressed("rotate_right")):
 		force += Vector3(1/2, 0, 0) # Move right
-		rotation_y_speed += rotation_speed*delta
+		rotation_y_speed += rotation_speed*delta + sqrt(abs(rotation_y_speed))/rotation_carry
 	if(Input.is_action_pressed("rotate_left")):
 		force += Vector3(-1/2, 0, 0) # Move right
-		rotation_y_speed -= rotation_speed*delta
+		rotation_y_speed -= rotation_speed*delta + sqrt(abs(rotation_y_speed))/rotation_carry
 	# Transform the force, so it is in "camera" coords
 	force = transform_matrix.xform(force)
 	# Apply the forces
