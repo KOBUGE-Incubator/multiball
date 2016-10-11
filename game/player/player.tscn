@@ -1,0 +1,99 @@
+[gd_scene load_steps=6 format=1]
+
+[ext_resource path="res://player/player.gd" type="Script" id=1]
+[ext_resource path="res://player/ball.scn" type="PackedScene" id=2]
+
+[sub_resource type="SphereShape" id=1]
+
+radius = 1.0
+
+[sub_resource type="MaterialShader" id=2]
+
+_code = { "fragment":"uniform color player_color;\nuniform color team_color;\nuniform float shape;\n\nfloat shape_value = 0;\nif(shape < 1) {\n\tshape_value = sign(VAR1.x * VAR1.y * VAR1.z)/2 + 0.5;\n}\nDIFFUSE = mix(player_color, team_color, shape_value).xyz;\n", "fragment_ofs":0, "light":"", "light_ofs":0, "vertex":"VAR1 = vec4(SRC_VERTEX,0);\n", "vertex_ofs":0 }
+
+[sub_resource type="ShaderMaterial" id=3]
+
+flags/visible = true
+flags/double_sided = false
+flags/invert_faces = false
+flags/unshaded = false
+flags/on_top = false
+flags/lightmap_on_uv2 = true
+flags/colarray_is_srgb = false
+params/blend_mode = 0
+params/depth_draw = 1
+params/line_width = 0.0
+shader/shader = SubResource( 2 )
+shader_param/player_color = Color( 0.03125, 0.00756836, 0.00756836, 1 )
+shader_param/team_color = Color( 1, 1, 1, 1 )
+shader_param/shape = 0.0
+
+[node name="player" type="Spatial"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="rigidbody" type="RigidBody" parent="."]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+input/ray_pickable = true
+input/capture_on_drag = false
+shape_count = 1
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.1
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = false
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = false
+axis_lock = 0
+velocity/linear = Vector3( 0, 0, 0 )
+velocity/angular = Vector3( 0, 0, 0 )
+damp_override/linear = -1.0
+damp_override/angular = -1.0
+script/script = ExtResource( 1 )
+speed = 20.0
+rotation_speed = 7.0
+rotation_carry = 0.2
+rotation_damp = 5.0
+camera_smoothing = 6.0
+force_to_camera = 0.0
+mouse_scale = Vector3( -2, 5, 0 )
+mouse_motion_scale = Vector3( 0, 0, 0 )
+default_camera_offset = Vector3( 0, 3, 5 )
+material = SubResource( 3 )
+
+[node name="mesh" parent="rigidbody" instance=ExtResource( 2 )]
+
+[node name="shape" type="CollisionShape" parent="rigidbody"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+visibility/visible = false
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="camera" type="Camera" parent="."]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 5 )
+projection = 0
+fov = 60.0
+near = 0.1
+far = 3000.0
+keep_aspect = 1
+current = false
+visible_layers = 1048575
+environment = null
+h_offset = 0.0
+v_offset = 0.0
+
+

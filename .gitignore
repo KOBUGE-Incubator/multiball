@@ -1,2 +1,4 @@
 .fscache
+.directory
+*.blend1
 *~
