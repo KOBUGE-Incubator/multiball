@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://player/team.gd" type="Script" id=1]
+
+[node name="team" type="Spatial"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+script/script = ExtResource( 1 )
+color = Color( 0, 0, 0, 1 )
+name = "Red"
+
+

@@ -3,6 +3,7 @@ extends RigidBody
 
 ## Constants ##
 
+
 const possible_camera_offsets = [
 	Vector3(0, 3, 0),
 	Vector3(0, -3, 0),
@@ -17,6 +18,7 @@ export(float) var rotation_speed = 20.0 # The speed of rotaion of the ball
 export(float) var rotation_carry = 1.0 # How much of the rotation speed is carried over
 export(float) var rotation_damp = 0.3 # How much of the rotation speed is retained for the next second
 export(float) var camera_smoothing = 2 # How much of the total distance would the camera move in a second
+export(float) var rotational_camera_smoothing = 2 # How much of the total rotation would the camera move in a second
 export(float) var force_to_camera = -0.1 # How much of the force goes into the camera
 export(Vector3) var mouse_scale = Vector3(2,3,0) # The scale of the mouse's interaction to the camera
 export(Vector3) var mouse_motion_scale = Vector3(0,0,0) # The scale of the mouse movement behavior
@@ -30,14 +32,14 @@ onready var default_camera_offset_length = default_camera_offset.length()
 
 ## Variables ##
 
+var team # The team of the player
+
 var camera_offset = default_camera_offset # The offset from the camera
 var target_camera_offset = camera_offset # An offset towards which we will move the camera
 var has_not_seen_ball_from = 0.0 # How much time passed from the last time we saw that ball
 
 var rotation_y = 0 # the rotation of the camera and movement on y
 var rotation_y_velocity = 0 # The speed of rotation on Y
-
-var start_pos = Vector3(0,9,0) # The starting position # TODO
 
 var should_respawn = false # Should we respawn?
 
@@ -55,23 +57,27 @@ func _ready():
 	
 	camera.set_translation(get_translation() + camera_offset)
 	
+	team = get_node("../../")
+	if !team extends preload("team.gd"):
+		team = null
+	
 	if !get_tree().is_editor_hint():
 		respawn()
 		set_fixed_process(true)
 		set_process(true)
 		set_process_input(true)
 
-func set_color(color):
-	material.set_shader_param("player_color",color)
-
 func respawn():
-	set_translation(start_pos)
 	set_linear_velocity(Vector3(0,0,0))
 	set_angular_velocity(Vector3(0,0,0))
 	set_rotation(Vector3(0,0,0))
 	rotation_y = round(rand_range(0, 8))*PI/4
 	rotation_y_velocity = 0
-	set_color(Color(rand_range(0,1),rand_range(0,1),rand_range(0,1)))
+	if team:
+		set_translation(team.get_spawn_pos())
+		material.set_shader_param("player_color", team.color)
+	else:
+		set_translation(Vector3()) # Sane default
 
 func _input(event):
 	if(event.is_action("respawn") && event.is_pressed() && !event.is_echo()):
@@ -88,8 +94,11 @@ func _process(delta):
 	camera.set_translation(camera.get_translation().linear_interpolate(target_camera_pos, make_camera_smoothing(delta)))
 	# Rotate the camera, so that it looks at the ball
 	var current_transform = camera.get_transform()
-	current_transform = current_transform.looking_at(get_translation(), Vector3(0, 1, 0))
-	camera.set_transform(current_transform)
+	var new_transform = current_transform.looking_at(get_translation(), Vector3(0, 1, 0))
+	var current_quat = Quat(current_transform.basis)
+	var new_quat = Quat(new_transform.basis)
+	new_transform.basis = Matrix3(current_quat.slerp(new_quat, make_camera_smoothing(delta, rotational_camera_smoothing)))
+	camera.set_transform(new_transform)
 
 func _integrate_forces(state):
 	var delta = state.get_step()
@@ -158,5 +167,5 @@ func fix_camera(delta):
 		
 		has_not_seen_ball_from = 0.0 # We just saw it
 
-func make_camera_smoothing(delta):
-	return clamp(camera_smoothing * delta * (1 + delta), 0, 1)
+func make_camera_smoothing(delta, smoothing = camera_smoothing):
+	return clamp(smoothing * delta * (1 + delta), 0, 1)
