@@ -1,0 +1,234 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://menu/menu.gd" type="Script" id=1]
+
+[node name="menu" type="CenterContainer"]
+
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 0.0
+margin/bottom = 0.0
+use_top_left = false
+script/script = ExtResource( 1 )
+server_checkbox_ = NodePath("panel/parts/grid/server")
+host_field_ = NodePath("panel/parts/grid/host")
+host_label_ = NodePath("panel/parts/grid/host_label")
+max_players_field_ = NodePath("panel/parts/grid/max_players")
+max_players_label_ = NodePath("panel/parts/grid/max_players_label")
+port_field_ = NodePath("panel/parts/grid/port")
+
+[node name="panel" type="PanelContainer" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 305.0
+margin/top = 215.0
+margin/right = 719.0
+margin/bottom = 384.0
+
+[node name="parts" type="VBoxContainer" parent="panel"]
+
+rect/min_size = Vector2( 400, 0 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 7.0
+margin/top = 7.0
+margin/right = 407.0
+margin/bottom = 162.0
+alignment = 1
+
+[node name="grid" type="GridContainer" parent="panel/parts"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 400.0
+margin/bottom = 107.0
+columns = 2
+
+[node name="server_label" type="Label" parent="panel/parts/grid"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 209.0
+margin/bottom = 23.0
+text = "Server:"
+align = 2
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="server" type="CheckBox" parent="panel/parts/grid"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+margin/left = 213.0
+margin/top = 0.0
+margin/right = 400.0
+margin/bottom = 23.0
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+text = "On"
+flat = false
+align = 0
+
+[node name="host_label" type="Label" parent="panel/parts/grid"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 27.0
+margin/right = 209.0
+margin/bottom = 51.0
+text = "Host:"
+align = 2
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="host" type="LineEdit" parent="panel/parts/grid"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+margin/left = 213.0
+margin/top = 27.0
+margin/right = 400.0
+margin/bottom = 51.0
+text = "127.0.0.1"
+placeholder/alpha = 0.6
+expand_to_len = false
+focus_mode = 2
+caret/caret_blink = false
+caret/caret_blink_speed = 0.65
+
+[node name="max_players_label" type="Label" parent="panel/parts/grid"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 55.0
+margin/right = 209.0
+margin/bottom = 79.0
+text = "Max players:"
+align = 2
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="max_players" type="LineEdit" parent="panel/parts/grid"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+margin/left = 213.0
+margin/top = 55.0
+margin/right = 400.0
+margin/bottom = 79.0
+text = "32"
+placeholder/alpha = 0.6
+expand_to_len = false
+focus_mode = 2
+caret/caret_blink = false
+caret/caret_blink_speed = 0.65
+
+[node name="port_label" type="Label" parent="panel/parts/grid"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 83.0
+margin/right = 209.0
+margin/bottom = 107.0
+text = "Port:"
+align = 2
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="port" type="LineEdit" parent="panel/parts/grid"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+margin/left = 213.0
+margin/top = 83.0
+margin/right = 400.0
+margin/bottom = 107.0
+text = "71753"
+placeholder/alpha = 0.6
+expand_to_len = false
+focus_mode = 2
+caret/caret_blink = false
+caret/caret_blink_speed = 0.65
+
+[node name="start" type="Button" parent="panel/parts"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 1
+size_flags/vertical = 2
+margin/left = 179.0
+margin/top = 111.0
+margin/right = 220.0
+margin/bottom = 131.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Start"
+flat = false
+
+[node name="start_duplicate" type="Button" parent="panel/parts"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 1
+size_flags/vertical = 2
+margin/left = 95.0
+margin/top = 135.0
+margin/right = 304.0
+margin/bottom = 155.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Start and open another window"
+flat = false
+
+[connection signal="pressed" from="panel/parts/start" to="." method="start"]
+
+[connection signal="pressed" from="panel/parts/start_duplicate" to="." method="start_and_duplicate"]
+
+

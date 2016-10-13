@@ -56,12 +56,13 @@ collision/layers = 1
 collision/mask = 1
 script/script = ExtResource( 1 )
 __meta__ = { "__editor_plugin_screen__":"3D" }
-default_color = Color( 0, 0, 0, 1 )
+default_color = Color( 1, 1, 1, 1 )
 min_alpha = 0.2
 max_alpha = 0.8
-color_transition = 0.353553
-alpha_transition = 2.2974
-max_team_weight = 5.0
+color_transition = 0.133972
+alpha_transition = 3.73214
+max_team_weight = 10.0
+team_weight = 3.0
 
 [node name="mesh" parent="." instance=ExtResource( 2 )]
 

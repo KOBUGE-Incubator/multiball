@@ -4,13 +4,14 @@ export(Color) var color = Color(0,0,0)
 export(String) var name = "Red"
 
 var checkpoints = {}
+var level = null
 
 func _ready():
 	set_transform(Transform())
 
 func add_player(player):
 	add_child(player)
-	player.team = self
+	player.get_node("rigidbody").team = self
 
 func get_player_count(): return get_child_count()
 func get_players(): return get_children()
@@ -26,7 +27,10 @@ func get_checkpoint_count():
 
 func get_spawn_pos():
 	var result = Vector3(0, 6, 0)
-	var spawnpoints = get_node("../level").get_spawnpoints() # TODO, don't refer to level by exact path
+	var spawnpoints = []
+	if level != null:
+		spawnpoints = level.get_spawnpoints()
+	
 	if checkpoints.size() > 0 or spawnpoints.size() > 0:
 		var picked = randi() % (checkpoints.size() + spawnpoints.size())
 		if picked < checkpoints.size():
