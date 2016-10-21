@@ -3,10 +3,9 @@
 [ext_resource path="res://main/main.gd" type="Script" id=1]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://player/player_local.tscn" type="PackedScene" id=3]
-[ext_resource path="res://levels/level.tscn" type="PackedScene" id=4]
-[ext_resource path="res://main/gui.gd" type="Script" id=5]
-[ext_resource path="res://player/team.tscn" type="PackedScene" id=6]
-
+[ext_resource path="res://main/gui.gd" type="Script" id=4]
+[ext_resource path="res://player/team.tscn" type="PackedScene" id=5]
+[ext_resource path="res://levels/level-ng-test.tscn" type="PackedScene" id=6]
 
 [node name="main" type="Spatial"]
 
@@ -31,8 +30,6 @@ environment = null
 h_offset = 0.0
 v_offset = 0.0
 
-[node name="level" parent="." instance=ExtResource( 4 )]
-
 [node name="GUI" type="Control" parent="."]
 
 anchor/right = 1
@@ -45,7 +42,7 @@ margin/left = 0.0
 margin/top = 0.0
 margin/right = 0.0
 margin/bottom = 0.0
-script/script = ExtResource( 5 )
+script/script = ExtResource( 4 )
 
 [node name="FPS" type="Label" parent="GUI"]
 
@@ -91,13 +88,15 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="team1" parent="." instance=ExtResource( 6 )]
+[node name="team1" parent="." instance=ExtResource( 5 )]
 
 color = Color( 1, 0, 0, 1 )
 
-[node name="team2" parent="." instance=ExtResource( 6 )]
+[node name="team2" parent="." instance=ExtResource( 5 )]
 
 color = Color( 0, 0.0859375, 1, 1 )
 name = "Blue"
+
+[node name="level" parent="." instance=ExtResource( 6 )]
 
 
