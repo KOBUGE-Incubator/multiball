@@ -14,7 +14,7 @@ const possible_camera_offsets = [
 ## Exported Variables ##
 
 export(int) var ping_sample_count = 10
-export(float) var speed = 20.0 # The speed of the ball
+export(float) var speed = 25.0 # The speed of the ball
 export(float) var network_interpolation_smoothing = 3 # How much would we interpolate in a second
 export(float) var network_interpolation_stop = 10 # How many units to stop interpolating after
 export(ShaderMaterial) var material

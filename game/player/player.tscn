@@ -44,10 +44,10 @@ shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
 mode = 0
-mass = 0.6
-friction = 0.6
+mass = 0.1
+friction = 0.5
 bounce = 0.1
-gravity_scale = 1.0
+gravity_scale = 2.0
 custom_integrator = false
 continuous_cd = true
 contacts_reported = 0
@@ -57,13 +57,13 @@ can_sleep = false
 axis_lock = 0
 velocity/linear = Vector3( 0, 0, 0 )
 velocity/angular = Vector3( 0, 0, 0 )
-damp_override/linear = -1.0
-damp_override/angular = -1.0
+damp_override/linear = -0.5
+damp_override/angular = -0.5
 script/script = ExtResource( 1 )
 ping_sample_count = 10
-speed = 20.0
-network_interpolation_smoothing = 7.0
-network_interpolation_stop = 4.0
+speed = 25.0
+network_interpolation_smoothing = 3
+network_interpolation_stop = 10
 material = SubResource( 3 )
 
 [node name="mesh" parent="rigidbody" instance=ExtResource( 2 )]
@@ -79,7 +79,7 @@ _update_shape_index = 0
 [node name="camera" type="Camera" parent="."]
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 5 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 7 )
 projection = 0
 fov = 60.0
 near = 0.1
