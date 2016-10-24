@@ -16,12 +16,7 @@ margin/right = 0.0
 margin/bottom = 0.0
 use_top_left = false
 script/script = ExtResource( 1 )
-type_select_ = NodePath("panel/parts/grid/server")
-host_field_ = NodePath("panel/parts/grid/host")
-host_label_ = NodePath("panel/parts/grid/host_label")
-max_players_field_ = NodePath("panel/parts/grid/max_players")
-max_players_label_ = NodePath("panel/parts/grid/max_players_label")
-port_field_ = NodePath("panel/parts/grid/port")
+grid_ = NodePath("panel/parts/grid")
 
 [node name="panel" type="PanelContainer" parent="."]
 
@@ -30,9 +25,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 305.0
-margin/top = 217.0
+margin/top = 205.0
 margin/right = 719.0
-margin/bottom = 383.0
+margin/bottom = 395.0
 
 [node name="parts" type="VBoxContainer" parent="panel"]
 
@@ -44,7 +39,7 @@ size_flags/vertical = 2
 margin/left = 7.0
 margin/top = 7.0
 margin/right = 407.0
-margin/bottom = 159.0
+margin/bottom = 183.0
 alignment = 1
 
 [node name="grid" type="GridContainer" parent="panel/parts"]
@@ -56,10 +51,10 @@ size_flags/vertical = 2
 margin/left = 0.0
 margin/top = 0.0
 margin/right = 400.0
-margin/bottom = 104.0
+margin/bottom = 128.0
 columns = 2
 
-[node name="server_label" type="Label" parent="panel/parts/grid"]
+[node name="type_label" type="Label" parent="panel/parts/grid"]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -76,7 +71,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="server" type="OptionButton" parent="panel/parts/grid"]
+[node name="type" type="OptionButton" parent="panel/parts/grid"]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -197,6 +192,42 @@ focus_mode = 2
 caret/caret_blink = false
 caret/caret_blink_speed = 0.65
 
+[node name="level_label" type="Label" parent="panel/parts/grid"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 108.0
+margin/right = 200.0
+margin/bottom = 128.0
+text = "Level:"
+align = 2
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="level" type="OptionButton" parent="panel/parts/grid"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+margin/left = 204.0
+margin/top = 108.0
+margin/right = 400.0
+margin/bottom = 128.0
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+text = "race1"
+flat = false
+align = 0
+selected = 0
+items = [  ]
+
 [node name="start" type="Button" parent="panel/parts"]
 
 focus/ignore_mouse = false
@@ -204,9 +235,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 1
 size_flags/vertical = 2
 margin/left = 179.0
-margin/top = 108.0
+margin/top = 132.0
 margin/right = 220.0
-margin/bottom = 128.0
+margin/bottom = 152.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -220,9 +251,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 1
 size_flags/vertical = 2
 margin/left = 95.0
-margin/top = 132.0
+margin/top = 156.0
 margin/right = 304.0
-margin/bottom = 152.0
+margin/bottom = 176.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
