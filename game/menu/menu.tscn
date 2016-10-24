@@ -222,10 +222,9 @@ margin/bottom = 128.0
 toggle_mode = true
 enabled_focus_mode = 2
 shortcut = null
-text = "race1"
 flat = false
 align = 0
-selected = 0
+selected = -1
 items = [  ]
 
 [node name="start" type="Button" parent="panel/parts"]
