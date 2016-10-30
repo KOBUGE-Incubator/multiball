@@ -5,6 +5,7 @@ class Level:
 	var path = ""
 	var name = ""
 	func _init(_path = "", _name = "Unnamed level"): path = _path; name = _name
+	static func _compare(a, b): return a.name < b.name or (a.name == b.name and a.path < b.path)
 
 export(NodePath) var grid_ = @"panel/parts/grid"
 
@@ -35,10 +36,13 @@ func _ready():
 				var file_path = dir.get_current_dir().plus_file(file_name)
 				if dir.current_is_dir() and file_name != "." and file_name != "..":
 					level_dirs_left.push_back(file_path)
-				if file_name.match("level-*.?scn") or file_name.match("level-*.scn"):
-					levels.push_back(Level.new(file_path, file_name.replace("level-","").basename()))
+				if file_name.match("level*.?scn") or file_name.match("level*.scn"):
+					var level_name = file_name.basename().replace("level","").replace("-", " ").strip_edges()
+					levels.push_back(Level.new(file_path, level_name))
 			dir.list_dir_end()
-		
+	
+	levels.sort_custom(Level, "_compare")
+	
 	for i in range(levels.size()):
 		level_select.add_item(levels[i].name, i)
 	
